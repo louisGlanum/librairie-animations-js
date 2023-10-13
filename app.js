@@ -1,36 +1,27 @@
-import {staggerLetter} from './animations/texte/title-stagger-letter.mjs'
-import { ImageOpener } from './animations/image/image-opener.mjs';
+import {staggerLetter, trigger_StaggerLetter} from './animations/texte/title-stagger-letter.mjs'
+import { imageOpener, trigger_ImageOpener } from './animations/image/image-opener.mjs';
 
 
 window.addEventListener('DOMContentLoaded', () => {
 
+    const triggerActions = "play none none reset"
 
+    gsap.registerPlugin(ScrollTrigger)
+
+    //Image
+    const containerImage2= document.querySelector('.container-image2')
+    const image2 = document.querySelector('.container-image2 .image')
+        imageOpener(containerImage2, image2, true, true);
 
     const containerImage = document.querySelector('.container-image')
-    const image = document.querySelector('.image')
+    const image = document.querySelector('.container-image .image')
+        trigger_ImageOpener(containerImage, image, true, true, triggerActions);
 
-    ImageOpener(containerImage, image, true, true);
 
+    //Text
     const containerTitle = document.querySelector('.title-complete');
-    staggerLetter(500, containerTitle)
+        staggerLetter(500, containerTitle, .3)
+
+    const containerTitle2 = document.querySelector('.title-complete2');
+        trigger_StaggerLetter(500, containerTitle2)
 })
-
-const ImageAnimation = () => {
-    const image = document.querySelector('.image')
-    const cache = document.querySelector('.cache-image')
-    const cache2 = document.querySelector('.cache2-image')
-    const container = document.querySelector('.container-image')
-
-    const tl = gsap.timeline();
-    const tl2 = gsap.timeline();
-    const tl3 = gsap.timeline();
-
-    tl.to(cache, {y:"-500px", duration:1.5, ease: "power4.inOut"} );
-    tl.to(image, {scale:1, duration:1.5, filter: "blur(0px)", ease: "power2.inOut"},"=-1");
-
-    tl2.to(cache2, {y:"-500px", duration:1.5, ease: "power2.inOut",});
-
-    tl3.to(container, {height:"500px", duration:2, ease: "power2.inOut"})
-
-}
-
