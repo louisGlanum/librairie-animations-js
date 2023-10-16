@@ -37,6 +37,8 @@
     }
 */
 
+
+//version classique
 export const imageOpener = (
   containerImage,
   image,
@@ -72,6 +74,9 @@ export const imageOpener = (
   gsap.to(containerImage, {height: "500px", duration: 2, ease: "power2.inOut"});
 };
 
+
+
+//version avec scrollTrigger
 export const trigger_ImageOpener = (   
     containerImage,
     image,

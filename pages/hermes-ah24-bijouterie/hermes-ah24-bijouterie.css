@@ -1,0 +1,45 @@
+.title{
+    font-family: 'Libre Caslon Text', serif;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container{
+    display:flex;
+    gap:20px;
+}
+.container-video{
+flex:65%;
+height:600px;
+width:700px;
+overflow:hidden;
+position:relative;
+}
+.container-video video{
+    height:auto;
+    width: 100%;
+}
+.container-text{
+    flex:35%;
+}
+
+.cache1-image__container-video{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color:white;
+    z-index:10;
+}
+.cache2-image__container-video{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color:#f4f3f1;
+    z-index:9;
+}
+

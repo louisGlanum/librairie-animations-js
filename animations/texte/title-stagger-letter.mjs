@@ -25,6 +25,8 @@
     }
 */
 
+
+// version classique
 export const staggerLetter = (delay = 0, containerTitle, staggerAmount = 0.5) => {
     const title = containerTitle.querySelector('h2').innerHTML
     const upperTitle = title.toUpperCase()
@@ -45,12 +47,17 @@ export const staggerLetter = (delay = 0, containerTitle, staggerAmount = 0.5) =>
     containerTitle.appendChild(cacheElement)
     setTimeout(()=> {
         const letters = document.querySelectorAll(`.${containerTitle.classList.value} span`);
-        gsap.to(letters, { y: 0, duration: 1, ease: "power4.Out",
+        gsap.to(letters, { y: 0, duration: .5, ease: "power4.Out",
          stagger: { amount: staggerAmount },});
     }, delay)
 }
 
-export const trigger_StaggerLetter = (delay = 0, containerTitle) => {
+
+
+
+
+//version avec scrollTrigger
+export const trigger_StaggerLetter = (delay = 0, containerTitle, staggerAmount = 0.5) => {
     const title = containerTitle.querySelector('h2').innerHTML
     const upperTitle = title.toUpperCase()
 
@@ -70,8 +77,8 @@ export const trigger_StaggerLetter = (delay = 0, containerTitle) => {
     containerTitle.appendChild(cacheElement)
     setTimeout(()=> {
         const letters = document.querySelectorAll(`.${containerTitle.classList.value} span`);
-        gsap.to(letters, { y: 0, duration: 1, ease: "power4.Out",
-         stagger: { amount: 0.5 },
+        gsap.to(letters, { y: 0, duration: .5, ease: "power4.Out",
+         stagger: { amount: staggerAmount },
          scrollTrigger: {
             trigger: letters,
             toggleActions: "play none none reset"

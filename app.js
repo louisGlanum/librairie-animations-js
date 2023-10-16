@@ -20,8 +20,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Text
     const containerTitle = document.querySelector('.title-complete');
-        staggerLetter(500, containerTitle, .3)
+        staggerLetter(500, containerTitle, 1)
 
     const containerTitle2 = document.querySelector('.title-complete2');
-        trigger_StaggerLetter(500, containerTitle2)
+        trigger_StaggerLetter(500, containerTitle2, 1)
 })
