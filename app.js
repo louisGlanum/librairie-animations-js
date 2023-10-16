@@ -1,4 +1,4 @@
-import {staggerLetter, trigger_StaggerLetter} from './animations/texte/title-stagger-letter.mjs'
+import {animeLetter_hidden, trigger_animeLetter_hidden} from './animations/texte/animeLetter.mjs'
 import { imageOpener, trigger_ImageOpener } from './animations/image/image-opener.mjs';
 
 
@@ -19,9 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     //Text
-    const containerTitle = document.querySelector('.title-complete');
-        staggerLetter(500, containerTitle, 1)
+    animeLetter_hidden('.title-split')
+    trigger_animeLetter_hidden('.title-split2')
 
-    const containerTitle2 = document.querySelector('.title-complete2');
-        trigger_StaggerLetter(500, containerTitle2, 1)
 })
