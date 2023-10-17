@@ -28,13 +28,9 @@
 */
 
 const getConfig_AnimeLetter = (options) => {
-  console.log(options)
   const config = {
     underline: {
-      active:
-        String(options?.underline?.active) === "true"
-          ? options.underline.active
-          : false,
+      active: String(options?.underline?.active) === "true" ? options.underline.active : false,
 
       right:
         String(options?.underline?.right) === "0"
@@ -43,22 +39,18 @@ const getConfig_AnimeLetter = (options) => {
           ? `${String(options.underline.right)}px`
           : 0,
 
-      duration: options?.underline?.duration
-        ? Number(options.underline.duration)
-        : 1,
+      duration: options?.underline?.duration ? Number(options.underline.duration) : 1,
       delay: options?.underline?.delay ? Number(options.underline.delay) : 0,
     },
     duration: options?.duration ? Number(options.duration) : 0.5,
     stagger: options?.stagger ? Number(options.stagger) : 1,
     delay: options?.delay ? Number(options.delay) : 0,
   };
-  console.log(config)
   return { config };
 };
 
-export const animeLetter_hidden = (target_element, options) => {
+export const animeLetter_reveal = (target_element, options) => {
   const { config } = getConfig_AnimeLetter(options);
-  console.log(config)
   //modification de l'élément
   const element = document.querySelector(target_element);
   const elementWidth = element.offsetWidth;
@@ -78,13 +70,14 @@ export const animeLetter_hidden = (target_element, options) => {
     if (config.underline.active) {
       const beforeElement = document.createElement("div");
       beforeElement.classList.add("underline");
-      beforeElement.style.right = `${elementWidth}px`; // taille en fct de la ligne
-      beforeElement.style.left = 0;
-      beforeElement.style.bottom = 0;
-      beforeElement.style.opacity = 0;
-      beforeElement.style.position = "absolute";
-      beforeElement.style.content = "";
-
+      Object.assign(beforeElement.style, {
+        left: 0,
+        right: `${elementWidth}px`,
+        bottom: 0,
+        position: "absolute",
+        content: "",
+        opacity: 0,
+      });
       line.appendChild(beforeElement);
     }
   });
@@ -102,9 +95,7 @@ export const animeLetter_hidden = (target_element, options) => {
   });
 
   if (config.underline.active) {
-    const beforeElement = document.querySelector(
-      `${target_element} .line .underline`
-    );
+    const beforeElement = document.querySelector(`${target_element} .line .underline`);
     gsap.to(beforeElement, {
       right: config.underline.right,
       opacity: 1,
@@ -124,15 +115,11 @@ export const animeLetter_hidden = (target_element, options) => {
   });
 };
 
-export const trigger_animeLetter_hidden = (
-  target_element,
-  options
-) => {
+export const trigger_animeLetter_reveal = (target_element, options) => {
   const { config } = getConfig_AnimeLetter(options);
-console.log(config)
+
   //modification de l'élément
   const element = document.querySelector(target_element);
-  console.log(element);
   const elementWidth = element.offsetWidth;
   element.style.display = "inline-block";
   element.style.position = "relative";
@@ -175,9 +162,7 @@ console.log(config)
     },
   });
   if (config.underline.active) {
-    const beforeElement = document.querySelector(
-      `${target_element} .line .underline`
-    );
+    const beforeElement = document.querySelector(`${target_element} .line .underline`);
     gsap.to(beforeElement, {
       right: config.underline.right,
       opacity: 1,

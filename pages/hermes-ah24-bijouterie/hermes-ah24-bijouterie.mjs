@@ -1,4 +1,4 @@
-import { animeLetter_hidden } from "../../animations/texte/animeLetter.mjs";
+import { animeLetter_reveal } from "../../animations/texte/animeLetter.mjs";
 
 window.addEventListener("DOMContentLoaded", () => {
   const containerVideo = document.querySelector(".container-video");
@@ -16,14 +16,15 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const options_para = {
+  
     delay: 0.5
   }
-  animeLetter_hidden(".title-split")
-  animeLetter_hidden(".subtitle-split")
-  animeLetter_hidden(".chapter-split",options_animeLetter)
-  animeLetter_hidden(".chapter2-split",options_animeLetter)
-  animeLetter_hidden(".para-split",options_para)
-  animeLetter_hidden(".para2-split" ,options_para)
+  animeLetter_reveal(".title-split")
+  animeLetter_reveal(".subtitle-split")
+  animeLetter_reveal(".chapter-split",options_animeLetter)
+  animeLetter_reveal(".chapter2-split",options_animeLetter)
+  animeLetter_reveal(".para-split",options_para)
+  animeLetter_reveal(".para2-split" ,options_para)
 
 });
 
