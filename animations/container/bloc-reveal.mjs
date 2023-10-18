@@ -7,7 +7,7 @@ LISTE d'animation disponible :
 *
 */
 
-export const bloc_reveal = (target_element, animation) => {
+export const trigger_bloc_reveal = (target_element, animation) => {
     const target = document.querySelector(target_element);
     const targetHeight = target.offsetHeight
     
