@@ -21,7 +21,6 @@ height:200vh;
 /* IMAGES */
 .container-image, .container-image2{
     height:600px;
-    width:700px;
     overflow:hidden;
     position:relative;
 }
