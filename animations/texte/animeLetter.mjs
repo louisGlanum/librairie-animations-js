@@ -137,7 +137,7 @@ export const trigger_animeLetter_reveal = (target_element, options) => {
       beforeElement.classList.add("underline");
       beforeElement.style.right = `${elementWidth}px`; // taille en fct de la ligne
       beforeElement.style.left = 0;
-      beforeElement.style.before = 0;
+      beforeElement.style.bottom = 0;
       beforeElement.style.opacity = 0;
       beforeElement.style.position = "absolute";
       beforeElement.style.content = "";

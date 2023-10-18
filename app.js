@@ -1,4 +1,4 @@
-import {animeLetter_hidden, trigger_animeLetter_hidden} from './animations/texte/animeLetter.mjs'
+import {animeLetter_reveal, trigger_animeLetter_reveal} from './animations/texte/animeLetter.mjs'
 import { imageOpener, trigger_ImageOpener } from './animations/image/image-opener.mjs';
 
 
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     //Text
-    animeLetter_hidden('.title-split')
-    trigger_animeLetter_hidden('.title-split2')
+    animeLetter_reveal('.title-split')
+    trigger_animeLetter_reveal('.title-split2')
 
 })
