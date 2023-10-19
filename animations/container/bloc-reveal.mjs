@@ -7,10 +7,25 @@ LISTE d'animation disponible :
 "fade-down"
 */
 
-export const trigger_bloc_reveal = (target_element, animation, duration) => {
+export const trigger_bloc_reveal = (target_element, animation, duration, delaie= 0) => {
     const target = document.querySelector(target_element);
     const targetHeight = target.offsetHeight;
-  
+
+    if (animation === "fade"){
+      target.style.opacity = 0;
+       //animations
+       gsap.to(target, {
+        duration: duration,
+        opacity: 1,
+        ease: "power4.Out",
+        delay: delaie,
+        scrollTrigger: {
+          start: "top bottom",
+          trigger: target,
+          toggleActions: "play none none none",
+        },
+      });
+    }
     if (animation === "fade-up") {
       target.style.opacity = 0;
       target.style.transform = `translateY(${targetHeight}px)`;
@@ -21,7 +36,7 @@ export const trigger_bloc_reveal = (target_element, animation, duration) => {
         opacity: 1,
   
         ease: "power4.Out",
-        delay: 0,
+        delay: delaie,
         scrollTrigger: {
           start: "top bottom",
           trigger: target,
@@ -38,7 +53,7 @@ export const trigger_bloc_reveal = (target_element, animation, duration) => {
         duration: duration,
         opacity: 1,
         ease: "power4.Out",
-        delay: 0,
+        delay: delaie,
         scrollTrigger: {
           start: "top bottom", // param 1 : elements param 2 : viewport
           // traduction : quand le top de l'élement touche le bottom du viewport : l'animation start

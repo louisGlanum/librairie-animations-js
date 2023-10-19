@@ -12,8 +12,8 @@ p{
     gap:20px;
 }
 .container-video{
-flex:55%;
-height:600px;
+flex:75%;
+height:40vh;
 width:700px;
 overflow:hidden;
 position:relative;
@@ -23,7 +23,7 @@ position:relative;
     width: 100%;
 }
 .container-text{
-    flex:45%;
+    flex:25%;
 }
 
 .cache1-image__container-video{
@@ -46,18 +46,20 @@ position:relative;
 
 /* TEXT */
 .title-split{
-    font-size:42px;
+    font-size:55px;
     font-family: 'Libre Caslon Text', serif;
 }
 .subtitle-split{
-    font-size:18px;
+    font-size:14px;
     font-family: 'Poppins', sans-serif;
+    font-weight:bold;
 }
 
 .chapter-split, .chapter2-split{
-    letter-spacing: 10px;
+    letter-spacing: 2.4px;
     font-family: 'Poppins', sans-serif;
     font-weight:bold;
+    font-size:12px;
 }
 
 .para-split, .para2-split{
