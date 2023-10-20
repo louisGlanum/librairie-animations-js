@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Arial", serif;
+  font-size: 3em;
+}
+
+.menu {
+  text-align: center;
+  margin-top: 20px;
+}
+
+p {
+  font-family: "Arial", serif;
+  font-size: 1.5em;
+  line-height: 1.35;
+}
+
+section {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.container-navigation {
+  width: 700px;
+}
+
+.navigation {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#section-one {
+  background-color: #ffecb6;
+}
+
+#section-two {
+  background-color: #ffecb6;
+}
+
+#section-three {
+  background-color: #ffecb6;
+}/*# sourceMappingURL=hermes-ah24-fixed-section.css.map */
