@@ -102,10 +102,17 @@ body {
 .line-up {
   position: absolute;
   inset: 0;
-  background-color: white;
+  background-color: #ffecb6;
   opacity: 0;
   z-index: 100;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line-up .inner-line-up {
+  width: 80%;
+  height: 80%;
 }
 .line-up img {
   width: 100%;
@@ -144,4 +151,5 @@ body {
 
 .modal-close button {
   padding: 50px;
+  opacity: 0;
 }/*# sourceMappingURL=hermes-ah24-accordion-2.css.map */

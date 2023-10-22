@@ -100,10 +100,18 @@ body {
 .line-up{
   position: absolute;
   inset:0;
-  background-color: white;
+  background-color: #ffecb6;
   opacity:0;
   z-index:100;
   pointer-events: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner-line-up{
+    width:80%;
+    height:80%;
+  }
 
   img{
     width:100%;
@@ -138,8 +146,10 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+
 }
 
 .modal-close button{
   padding:50px;
+  opacity:0;
 }

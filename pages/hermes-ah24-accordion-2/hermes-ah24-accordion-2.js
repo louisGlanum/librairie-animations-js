@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".container .card img");
   const cards = document.querySelectorAll(".card");
   const caches = document.querySelectorAll(".cache");
-const btnClose = document.querySelector(".modal-close button")
+  const btnClose = document.querySelector(".modal-close button")
   cards.forEach((card) => {
     card.classList.add("init");
   });
@@ -42,7 +42,7 @@ const btnClose = document.querySelector(".modal-close button")
       const hiddenCards = document.querySelectorAll(".card.hidden");
       const fondBlanc = document.querySelector(".fond-blanc");
       const lineUp = document.querySelectorAll(".line-up");
-
+    
       lineUp.forEach((line) => {
         if (cardAttribute === line.dataset.line) {
           console.log("ici");
@@ -80,10 +80,13 @@ const btnClose = document.querySelector(".modal-close button")
         },
         "=-.3"
       );
+      tl.to(btnClose,{
+        opacity:1,
+        duration:.5,
+      },"=-.5")
 
-      
       btnClose.addEventListener('click', () => {
- 
+        
         tl.reverse();
 
         cards.forEach((card) => {
@@ -94,6 +97,7 @@ const btnClose = document.querySelector(".modal-close button")
       
             cardFocus.removeAttribute('style')
             img.removeAttribute('style');
+            lineUpFocus.classList.remove('focus')
         },1370)
     })
     });
