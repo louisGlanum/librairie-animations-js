@@ -33,7 +33,16 @@ section {
 }
 
 .container-navigation {
-  width: 700px;
+  width: 280px;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  border: 1px solid black;
+  z-index: 999;
+}
+
+.content section {
+  padding-left: 300px;
 }
 
 .navigation {
@@ -48,9 +57,9 @@ section {
 }
 
 #section-two {
-  background-color: #ffecb6;
+  background-color: #c9a440;
 }
 
 #section-three {
-  background-color: #ffecb6;
+  background-color: #866815;
 }/*# sourceMappingURL=hermes-ah24-fixed-section.css.map */
