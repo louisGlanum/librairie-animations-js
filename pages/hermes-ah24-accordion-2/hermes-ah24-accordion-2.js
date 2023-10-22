@@ -53,14 +53,14 @@ window.addEventListener("DOMContentLoaded", () => {
       const tl = gsap.timeline();
       tl.to(hiddenCards, {
         opacity: 0,
-        duration: 0.3,
+        duration: 0.2,
         stagger: { amount: 0.1 },
       });
       tl.to(img, {
         delay: 1.3,
         left: `-${positionX}px`,
         top: `-${positionY}px`,
-        delay: 0.2,
+        delay: 0.5,
         width: "100vw",
         height: "100vh",
       });

@@ -10,7 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #ffecb6;
+  background-color: #141414;
 }
 .container {
   display: flex;
@@ -35,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .5s all ease-in-out ;
+  transition: .8s all ease-in-out ;
 }
 .container .card-container{
   overflow: hidden;
@@ -55,7 +55,7 @@ body {
 .container .cache {
     position: absolute;
     inset:0;
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(0,0,0,.4);
     transition: 1s all cubic-bezier(0,.5,.23,1) ;
 }
 .container .cache:hover{
@@ -75,7 +75,9 @@ body {
     opacity: 0;
     transition: all .5s ease-in-out;
     z-index:2;
-    color:black;
+    color:white;
+    font-family: 'Playfair Display', serif;
+
 }
 .card:hover .title{
     opacity:1;
@@ -92,7 +94,7 @@ body {
 .fond-blanc{
   position: absolute;
   inset:0;
-  background-color: #ffecb6;
+  background-color: #141414;
   opacity:0;
   z-index:100;
   pointer-events: none;
@@ -100,7 +102,7 @@ body {
 .line-up{
   position: absolute;
   inset:0;
-  background-color: #ffecb6;
+  background-color:  #141414;
   opacity:0;
   z-index:100;
   pointer-events: none;
