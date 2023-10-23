@@ -72,6 +72,7 @@ body {
   flex: 1;
   display: none;
   opacity: 0;
+  height: 100%;
 }
 .container .content .container-panels .content-look.visible {
   display: block;
