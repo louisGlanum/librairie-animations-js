@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".container .card img");
+  const imagesLineUp = document.querySelectorAll(".line-up img")
   const cards = document.querySelectorAll(".card");
   const caches = document.querySelectorAll(".cache");
   const btnClose = document.querySelector(".modal-close button")
@@ -7,6 +8,9 @@ window.addEventListener("DOMContentLoaded", () => {
     card.classList.add("init");
   });
   images.forEach((img, key) => {
+    img.src = `https://source.unsplash.com/random?sig=${key}`;
+  });
+  imagesLineUp.forEach((img, key) => {
     img.src = `https://source.unsplash.com/random?sig=${key}`;
   });
 
