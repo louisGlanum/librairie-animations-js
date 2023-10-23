@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".card");
   const caches = document.querySelectorAll(".cache");
   const btnClose = document.querySelector(".modal-close button")
+  
   cards.forEach((card) => {
     card.classList.add("init");
   });
