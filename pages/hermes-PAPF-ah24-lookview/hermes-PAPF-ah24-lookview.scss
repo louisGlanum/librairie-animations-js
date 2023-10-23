@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: white;
+  overflow-x: hidden;
+}
 .container {
   height: 100vh;
   display: flex;
@@ -32,12 +36,11 @@
         gap: 5px;
         max-width: 100%;
         padding: 0;
-        margin:5px 0;
+        margin: 5px 0;
         list-style-type: none;
       }
 
       li {
-        aspect-ratio: 230px / 100px;
       }
 
       img {
@@ -58,59 +61,83 @@
         width: 100%;
         justify-content: space-around;
         padding: 15px 30px;
-        border:1px solid black;
-        button{
-            font-family: 'Roboto', sans-serif;
-            color:#610000;
-            background-color: transparent;
-            border:none;
-            font-size: 30px;
-            font-weight:bold;
-            cursor:pointer;
+        border: 1px solid black;
+        button {
+          font-family: "Roboto", sans-serif;
+          color: #610000;
+          background-color: transparent;
+          border: none;
+          font-size: 30px;
+          font-weight: bold;
+          cursor: pointer;
         }
       }
 
-      .content-look{
-        flex:1;
+      .content-look {
+        flex: 1;
+        display: none;
+        opacity: 0;
 
-        .flex-look{
-            display:flex;
-            gap:20px;
-            height:100%;
-            padding:80px;
-
-            .img-container{
-                aspect-ratio: 0.5;
-                flex:50%;
-
-                img{
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-
-            .text-part{
-                flex:50%;
-                font-family: 'Roboto', sans-serif;
-
-                .title{
-                    font-size:30px;
-                    font-weight:bold;
-                }
-                .subtitle{
-                    font-size:25px;
-                }
-                .details-bloc{
-                    margin:20px 0;
-                    font-size:16px;
-                }
-            }
+        &.visible {
+          display: block;
+          opacity: 1;
         }
 
-        &.hidden{
-            display:none;
+        .flex-look {
+          display: flex;
+          gap: 20px;
+          height: 100%;
+          padding: 80px;
+
+          .img-container {
+            flex: 50%;
+            position: relative;
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .cache-image {
+              position: absolute;
+              background-color: white;
+              inset: 0;
+              z-index: 2;
+            }
+          }
+
+          .text-part {
+            flex: 50%;
+            font-family: "Roboto", sans-serif;
+
+            .title-bloc {
+              position: relative;
+              z-index: 4;
+              .title {
+                font-size: 30px;
+                font-weight: bold;
+              }
+              .subtitle {
+                font-size: 25px;
+              }
+              .cache-title {
+                position: absolute;
+                background-color: white;
+                inset: 0;
+              }
+            }
+            .details-bloc {
+              margin: 20px 0;
+              font-size: 16px;
+              position: relative;
+              z-index: 4;
+              .cache-detail {
+                position: absolute;
+                background-color: white;
+                inset: 0;
+              }
+            }
+          }
         }
       }
     }

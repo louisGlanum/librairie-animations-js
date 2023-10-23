@@ -1,121 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="hermes-PAPF-ah24-lookview.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="hermes-PAPF-ah24-lookview.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="navigation">
-            <div class="menu">Menu</div>         
+      <div class="navigation">
+        <div class="menu">Menu</div>
+      </div>
+      <div class="content">
+        <div class="container-lineup">
+          <ul>
+            <li data-line="1">
+              <img src="https://source.unsplash.com/random?iran" alt="" />
+            </li>
+            <li data-line="2">
+              <img src="https://source.unsplash.com/random?usa" alt="" />
+            </li>
+            <li data-line="3">
+              <img src="https://source.unsplash.com/random?fr" alt="" />
+            </li>
+            <li data-line="4">
+              <img src="https://source.unsplash.com/random?en" alt="" />
+            </li>
+            <li data-line="5">
+              <img src="https://source.unsplash.com/random?es" alt="" />
+            </li>
+          </ul>
         </div>
-        <div class="content">
-            <div class="container-lineup">
-                <ul>
-                    <li data-line="1">
-                      <img src="https://source.unsplash.com/random?iran" alt="">
-                    </li>
-                    <li data-line="2">
-                      <img src="https://source.unsplash.com/random?usa" alt="">
-                    </li>
-                    <li data-line="3">
-                      <img src="https://source.unsplash.com/random?usa" alt="">
-                    </li>
-                    <li data-line="4">
-                      <img src="https://source.unsplash.com/random?usa" alt="">
-                    </li>
-                    <li data-line="5">
-                      <img src="https://source.unsplash.com/random?usa" alt="">
-                    </li>
-                  </ul>
+        <div class="container-panels">
+          <div class="sub-navigation">
+            <button class="look-view-btn">look view</button>
+            <button class="VM-view-btn">VM view</button>
+          </div>
+
+          <div class="content-look visible" data-content="1">
+            <div class="flex-look">
+              <div class="img-container">
+                <img src="https://source.unsplash.com/random?es" alt="" />
+                <div class="cache-image"></div>
               </div>
-            <div class="container-panels">
-                <div class="sub-navigation">
-                    <button class="look-view-btn">look view</button>
-                    <button class="VM-view-btn">VM view</button>
+              <div class="text-part">
+                <div class="title-bloc">
+                  <div class="title">Look 1</div>
+                  <div class="subtitle">cr 1</div>
+                  <div class="cache-title"></div>
                 </div>
-                <div class="content-look" data-content="1">
-                    <div class="flex-look">
-                        <div class="img-container">
-                            <img src="https://source.unsplash.com/random?usa" alt="">
-                        </div>
-                        <div class="text-part">
-                            <div class="title">Look 1</div>
-                            <div class="subtitle">cr 1</div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
                 </div>
-                <div class="content-look hidden" data-content="2">
-                    <div class="flex-look">
-                        <div class="img-container">
-                            <img src="https://source.unsplash.com/random?usa" alt="">
-                        </div>
-                        <div class="text-part">
-                            <div class="title">Look 2</div>
-                            <div class="subtitle">cr 2</div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-                            <div class="details-bloc">
-                                <div class="ref">4E0221DA5H</div>
-                                <div class="type">Veste fluide inspiration tablier</div>
-                                <div class="categorie">Twill de soie lavé</div>
-                                <div class="color">5H Bleu noir</div>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
                 </div>
-                <div class="content-vm"></div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="content-look" data-content="2">
+            <div class="flex-look">
+              <div class="img-container">
+                <img src="https://source.unsplash.com/random?es" alt="" />
+                <div class="cache-image"></div>
+              </div>
+              <div class="text-part">
+                <div class="title-bloc">
+                  <div class="title">Look 2</div>
+                  <div class="subtitle">cr 2</div>
+                  <div class="cache-title"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-look" data-content="3">
+            <div class="flex-look">
+              <div class="img-container">
+                <img src="https://source.unsplash.com/random?es" alt="" />
+                <div class="cache-image"></div>
+              </div>
+              <div class="text-part">
+                <div class="title-bloc">
+                  <div class="title">Look 3</div>
+                  <div class="subtitle">cr 3</div>
+                  <div class="cache-title"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-look" data-content="4">
+            <div class="flex-look">
+              <div class="img-container">
+                <img src="https://source.unsplash.com/random?fr" alt="" />
+                <div class="cache-image"></div>
+              </div>
+              <div class="text-part">
+                <div class="title-bloc">
+                  <div class="title">Look 4</div>
+                  <div class="subtitle">cr 4</div>
+                  <div class="cache-title"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-look" data-content="5">
+            <div class="flex-look">
+              <div class="img-container">
+                <img src="https://source.unsplash.com/random?en" alt="" />
+                <div class="cache-image"></div>
+              </div>
+              <div class="text-part">
+                <div class="title-bloc">
+                  <div class="title">Look 5</div>
+                  <div class="subtitle">cr 5</div>
+                  <div class="cache-title"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+                <div class="details-bloc">
+                  <div class="ref">4E0221DA5H</div>
+                  <div class="type">Veste fluide inspiration tablier</div>
+                  <div class="categorie">Twill de soie lavé</div>
+                  <div class="color">5H Bleu noir</div>
+                  <div class="cache-detail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-vm"></div>
         </div>
+      </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script type="module" src="hermes-PAPF-ah24-lookview.mjs"></script>
-</body>
+  </body>
 </html>

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: white;
+  overflow-x: hidden;
+}
+
 .container {
   height: 100vh;
   display: flex;
@@ -33,9 +38,6 @@
   padding: 0;
   margin: 5px 0;
   list-style-type: none;
-}
-.container .content .container-lineup li {
-  aspect-ratio: 230px/100px;
 }
 .container .content .container-lineup img {
   display: block;
@@ -68,6 +70,12 @@
 }
 .container .content .container-panels .content-look {
   flex: 1;
+  display: none;
+  opacity: 0;
+}
+.container .content .container-panels .content-look.visible {
+  display: block;
+  opacity: 1;
 }
 .container .content .container-panels .content-look .flex-look {
   display: flex;
@@ -76,8 +84,8 @@
   padding: 80px;
 }
 .container .content .container-panels .content-look .flex-look .img-container {
-  aspect-ratio: 0.5;
   flex: 50%;
+  position: relative;
 }
 .container .content .container-panels .content-look .flex-look .img-container img {
   display: block;
@@ -86,23 +94,42 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.container .content .container-panels .content-look .flex-look .img-container .cache-image {
+  position: absolute;
+  background-color: white;
+  inset: 0;
+  z-index: 2;
+}
 .container .content .container-panels .content-look .flex-look .text-part {
   flex: 50%;
   font-family: "Roboto", sans-serif;
 }
-.container .content .container-panels .content-look .flex-look .text-part .title {
+.container .content .container-panels .content-look .flex-look .text-part .title-bloc {
+  position: relative;
+  z-index: 4;
+}
+.container .content .container-panels .content-look .flex-look .text-part .title-bloc .title {
   font-size: 30px;
   font-weight: bold;
 }
-.container .content .container-panels .content-look .flex-look .text-part .subtitle {
+.container .content .container-panels .content-look .flex-look .text-part .title-bloc .subtitle {
   font-size: 25px;
+}
+.container .content .container-panels .content-look .flex-look .text-part .title-bloc .cache-title {
+  position: absolute;
+  background-color: white;
+  inset: 0;
 }
 .container .content .container-panels .content-look .flex-look .text-part .details-bloc {
   margin: 20px 0;
   font-size: 16px;
+  position: relative;
+  z-index: 4;
 }
-.container .content .container-panels .content-look.hidden {
-  display: none;
+.container .content .container-panels .content-look .flex-look .text-part .details-bloc .cache-detail {
+  position: absolute;
+  background-color: white;
+  inset: 0;
 }
 
 /* scrollbar */
