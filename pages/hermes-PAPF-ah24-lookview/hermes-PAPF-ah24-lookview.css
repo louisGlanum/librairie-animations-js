@@ -39,6 +39,10 @@ body {
   margin: 5px 0;
   list-style-type: none;
 }
+.container .content .container-lineup li.target {
+  box-sizing: border-box;
+  border: 3px solid #610000;
+}
 .container .content .container-lineup img {
   display: block;
   width: 100%;
@@ -68,11 +72,18 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.container .content .container-panels .panels {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 .container .content .container-panels .content-look {
   flex: 1;
   display: none;
   opacity: 0;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
 }
 .container .content .container-panels .content-look.visible {
   display: block;
@@ -131,6 +142,20 @@ body {
   position: absolute;
   background-color: white;
   inset: 0;
+}
+.container .content .container-panels .content-vm {
+  flex: 1;
+  display: none;
+  opacity: 0;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background-color: #610000;
+}
+.container .content .container-panels .content-vm.visible {
+  display: block;
+  opacity: 1;
 }
 
 /* scrollbar */

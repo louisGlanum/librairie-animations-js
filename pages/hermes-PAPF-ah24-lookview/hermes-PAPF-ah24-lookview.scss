@@ -41,6 +41,11 @@ body {
       }
 
       li {
+
+        &.target{
+          box-sizing: border-box;
+          border:3px solid #610000;
+        }
       }
 
       img {
@@ -56,6 +61,7 @@ body {
       border: 1px solid red;
       display: flex;
       flex-direction: column;
+
       .sub-navigation {
         display: flex;
         width: 100%;
@@ -72,13 +78,19 @@ body {
           cursor: pointer;
         }
       }
+      .panels{
+        position:relative;
+        height:100%;
+        width: 100%;
+      }
 
       .content-look {
         flex: 1;
         display: none;
         opacity: 0;
-        height:100%;
-        
+        position:absolute;
+        inset: 0;
+        z-index:10;
         &.visible {
           display: block;
           opacity: 1;
@@ -139,6 +151,20 @@ body {
               }
             }
           }
+        }
+      }
+      .content-vm{
+        flex: 1;
+        display: none;
+        opacity: 0;
+        height:100%;
+        position:absolute;
+        inset: 0;
+        z-index:20;
+        background-color:#610000 ;
+        &.visible {
+          display: block;
+          opacity: 1;
         }
       }
     }
