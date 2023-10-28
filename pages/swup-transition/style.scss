@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+/* Define a transition duration during page visits */
+main{
+    background-color: black;
+    height:100vh;
+    position: relative;
+}
+// html.is-changing .transition-fade {
+//     transition: opacity 1s;
+//     opacity: 1;
+//   }
+//   /* Define the styles for the unloaded pages */
+//   html.is-animating .transition-fade {
+//     opacity: 0;
+// }
+
+.img-container{
+    width:500px;
+    height:500px;
+    overflow: hidden;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.hero-section{
+    background-image: url('./img1.jpg');
+    height:100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title-project{
+        font-size:80px;
+        font-family: sans-serif;
+        color:white;
+        opacity: 0;
+    }
+}
+
+.fake-text{
+    margin-top:100px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color:white;
+}
