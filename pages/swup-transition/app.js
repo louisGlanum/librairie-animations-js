@@ -16,7 +16,7 @@ const swup = new Swup({
             });
           },
           in: (done) => {
-            console.log('out')
+            console.log('in')
             const heroSection = document.querySelector('.hero-section')
             const titleProject = document.querySelector('.title-project')
             gsap.to(heroSection,{
