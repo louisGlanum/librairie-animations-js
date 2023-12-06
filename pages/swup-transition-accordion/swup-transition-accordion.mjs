@@ -37,7 +37,7 @@ const swup = new Swup({
           out: (done) => {
             const heroSection = document.querySelector('.hero-section');
             if(!heroSection){
-
+              
               setTimeout(()=>{
                 done();
               }, 1400)
@@ -70,6 +70,7 @@ const swup = new Swup({
             done();
           },
         },
+
       ],
     }),
     new SwupHeadPlugin({

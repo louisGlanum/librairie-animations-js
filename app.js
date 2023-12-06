@@ -15,7 +15,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const containerImage = document.querySelector('.container-image')
     const image = document.querySelector('.container-image .image')
-        trigger_ImageOpener(containerImage, image, true, true, triggerActions);
+
+
+
+        trigger_ImageOpener(
+            containerImage, 
+            image, 
+            true, 
+            true, 
+            triggerActions
+            );
+
 
 
     //Text

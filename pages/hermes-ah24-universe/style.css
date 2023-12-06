@@ -1,0 +1,53 @@
+.universe-wrapper {
+  background-color: rgb(224, 224, 224);
+  min-height: 100vh;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.universe-wrapper .universe-filter {
+  padding: 20px 0;
+  margin: 0 10px;
+}
+.universe-wrapper .universe-filter button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+.universe-wrapper .universe-filter button:hover {
+  color: white;
+}
+.universe-wrapper .universe-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+.universe-wrapper .universe-row .img-container {
+  overflow: hidden;
+}
+.universe-wrapper .universe-row .img-container:nth-child(15n+1), .universe-wrapper .universe-row .img-container:nth-child(15n+3), .universe-wrapper .universe-row .img-container:nth-child(15n+5), .universe-wrapper .universe-row .img-container:nth-child(15n+9), .universe-wrapper .universe-row .img-container:nth-child(15n+11) {
+  grid-row: span 2;
+}
+.universe-wrapper .universe-row .img-container:nth-child(15n+2), .universe-wrapper .universe-row .img-container:nth-child(15n+4), .universe-wrapper .universe-row .img-container:nth-child(15n+6), .universe-wrapper .universe-row .img-container:nth-child(15n+7), .universe-wrapper .universe-row .img-container:nth-child(15n+8), .universe-wrapper .universe-row .img-container:nth-child(15n+10), .universe-wrapper .universe-row .img-container:nth-child(15n+12), .universe-wrapper .universe-row .img-container:nth-child(15n+13), .universe-wrapper .universe-row .img-container:nth-child(15n+14), .universe-wrapper .universe-row .img-container:nth-child(15n+15) {
+  grid-row: span 1;
+}
+.universe-wrapper .universe-row .img-container img {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out, filter 1s ease-in-out;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(8deg) brightness(88%) contrast(110%);
+}
+.universe-wrapper .universe-row .img-container img:hover {
+  transform: scale(1);
+  filter: none;
+}
+.universe-wrapper .universe-row .img-container.hidden {
+  opacity: 0;
+}/*# sourceMappingURL=style.css.map */
