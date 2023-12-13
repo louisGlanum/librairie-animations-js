@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/video.js@8.6.1/dist/video-js.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="blur-bg-menu"></div>
+    <div class="menu-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">PRESS <br/>LOOKS</a></li>
+                    <li><a href="#">COMMERCIAL <br/> LOOKS</a></li>
+                    <li><a href="#">DRAWING & <br/> SIGNATURES</a></li>
+                    <li><a href="#">SUBCLASSES</a></li>
+                    <li><a href="#">COLOR <br/> STORIES</a></li>
+                    <li><a href="#">MEN'S <br/>UNIVERSE</a></li>
+                    <li><a href="#">BUYING <br/>GUIDELINES</a></li>
+                    <li><a href="#">ECOM</a></li>
+                    <div class="dropdown-wrapper">
+                        <li class="dropdown-btn"><a href="#">TOOLBOX</a></li>
+                        <div class="dropdown-content">
+                            <a href=""><span>collection boards </span><span>and pricing tables</span></a>
+                            <a href="">color stories</a>
+                            <a href="">press line up</a>
+                            <a href="">commercial line up</a>
+                            <a href="">catalogue</a>
+                            <a href="">catalogue</a>
+                            <a href="">catalogue</a>
+                            <a href="">buying insights</a>
+                            <a href="">digital fabric book</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+    </div>
+
+    <div class="videos-wrapper">
+        <video-js id="video-1"  muted loop>
+   
+            <source src="./nespresso-video.mp4" type="video/mp4">
+        </video-js>
+        <video-js id="video-2" src="./video.mp4" autoplay loop  muted>
+            <source src="./video.mp4" type="video/mp4">
+        </video-js>
+        <video-js id="video-3" muted controls>
+            <source src="./video.mp4" type="video/mp4">
+        </video-js>
+        <video-js id="video-4" muted controls>
+            <source src="./nespresso-video.mp4" type="video/mp4">
+        </video-js>
+        <div class="fond-blanc"></div>
+        <button class="close-video-1">fermer video 1</button>
+        <button class="close-video-2">fermer video 2</button>
+        <div class="title-1 title-video">Runway</div>
+        <div class="title-2 title-video">Key themes</div>
+    </div>
+ 
+    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
