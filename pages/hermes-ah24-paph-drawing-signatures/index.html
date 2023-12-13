@@ -41,10 +41,10 @@
     </div>
 
     <div class="videos-wrapper">
-        <video-js id="video-1"  muted loop>
+        <video-js id="video-1" class="video-container" data-video="drawing" muted loop>
             <source src="./nespresso-video.mp4" type="video/mp4">
         </video-js>
-        <video-js id="video-2" src="./video.mp4" autoplay loop  muted>
+        <video-js id="video-2" src="./video.mp4" class="video-container" data-video="signatures" autoplay loop  muted>
             <source src="./video.mp4" type="video/mp4">
         </video-js>
         <video-js id="video-3" muted controls>
@@ -56,8 +56,8 @@
         <div class="fond-blanc"></div>
         <button class="close-video-1">fermer video 1</button>
         <button class="close-video-2">fermer video 2</button>
-        <div class="title-1 title-video">Drawing</div>
-        <div class="title-2 title-video">Signatures</div>
+        <div class="title-1 title-video" data-video="drawing">Drawing</div>
+        <div class="title-2 title-video" data-video="signatures">Signatures</div>
     </div>
  
     <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>

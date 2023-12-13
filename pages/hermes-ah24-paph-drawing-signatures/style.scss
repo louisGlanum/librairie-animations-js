@@ -160,7 +160,6 @@ $menu-height: 72px;
   #video-1 {
     top: calc(5% + $menu-height);
     left: 4vw;
-    filter:blur(10px);
     transition: transform .2s ease-in-out, filter .2s ease-in-out;
       &:before{
         position: absolute;
@@ -171,18 +170,15 @@ $menu-height: 72px;
       }
       &.active{
         transform:translate(-2%,2%);
-        filter:blur(0px);
         &:before{
           transform: translate(2%,-2%);
         }
       }
-    
   }
   #video-2 {
     bottom: 5%;
     right: 4vw;
-    filter:blur(10px);
-    transition: transform .2s ease-in-out, filter .2s ease-in-out;
+    transition: transform .2s ease-in-out,  filter .2s ease-in-out;
       &:before{
         position: absolute;
         content:"";
@@ -193,7 +189,6 @@ $menu-height: 72px;
       }
       &.active{
         transform:translate(2%,-2%);
-        filter:blur(0px);
         &:before{
           transform: translate(-2%,2%);
           width: 102%;

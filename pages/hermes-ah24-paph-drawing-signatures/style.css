@@ -145,7 +145,6 @@
 .videos-wrapper #video-1 {
   top: calc(5% + 72px);
   left: 4vw;
-  filter: blur(10px);
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 .videos-wrapper #video-1:before {
@@ -157,7 +156,6 @@
 }
 .videos-wrapper #video-1.active {
   transform: translate(-2%, 2%);
-  filter: blur(0px);
 }
 .videos-wrapper #video-1.active:before {
   transform: translate(2%, -2%);
@@ -165,7 +163,6 @@
 .videos-wrapper #video-2 {
   bottom: 5%;
   right: 4vw;
-  filter: blur(10px);
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 .videos-wrapper #video-2:before {
@@ -178,7 +175,6 @@
 }
 .videos-wrapper #video-2.active {
   transform: translate(2%, -2%);
-  filter: blur(0px);
 }
 .videos-wrapper #video-2.active:before {
   transform: translate(-2%, 2%);
