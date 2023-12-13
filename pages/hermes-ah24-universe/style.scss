@@ -2,9 +2,9 @@ $full-height: 2;
 $half-height: 1;
 
 .universe-wrapper {
-    background-color: rgb(224, 224, 224);
+    // background-color: rgb(224, 224, 224);
     min-height:100vh;
-    max-width:940px;
+    max-width:1640px;
     margin: 0 auto;
     .universe-filter{
         padding:20px 0;
@@ -15,8 +15,9 @@ $half-height: 1;
             border: none;
             font-size: 20px;
             transition:all .2s ease-in-out;
+            font-family: 'Space Grotesk', sans-serif;
             &:hover{
-                color:white
+                color:grey
             }
         }
     }
@@ -30,42 +31,22 @@ $half-height: 1;
         .img-container{
             overflow: hidden;   
 
-            &:nth-child(15n + 1),
-            &:nth-child(15n + 3),
-            &:nth-child(15n + 5),
-            &:nth-child(15n + 9),
-            &:nth-child(15n + 11){
-                grid-row: span $full-height;
-            }
-            &:nth-child(15n + 2),
-            &:nth-child(15n + 4),
-            &:nth-child(15n + 6),
-            &:nth-child(15n + 7),
-            &:nth-child(15n + 8),
-            &:nth-child(15n + 10),
-            &:nth-child(15n + 12),
-            &:nth-child(15n + 13),
-            &:nth-child(15n + 14),
-            &:nth-child(15n + 15){
-                grid-row: span $half-height;
-            }
-
             img{
                 height:100%;
                 width: 100%;
                 aspect-ratio:1/1;
                 object-fit: cover;
                 object-position: center;
-                transform:scale(1.1);
+                transform: scale(1.1) !important;
                 transition: transform .5s ease-in-out, filter 1s ease-in-out;
-                filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(8deg) brightness(88%) contrast(110%);
+                // filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(8deg) brightness(88%) contrast(110%);
                 &:hover{
-                    transform: scale(1);
+                    transform: scale(1) !important;
                     filter: none;
                 }
             } 
             &.hidden{
-                opacity: 0;
+                display:none;
             }
         }
     }
