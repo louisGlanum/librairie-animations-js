@@ -16,6 +16,40 @@ const arrStyle = {
     [3, 5, 4, 6],
     [4, 5, 5, 6],
   ],
+
+  all2:[
+    [1 , 1 , 3 , 2],
+    [1 , 2 , 2 , 3],
+    [2 , 2 , 3 , 3],
+    [1 , 3 , 3 , 4],
+    [1 , 4 , 2 , 5],
+    [2 , 4 , 3 , 5],
+    [1 , 5 , 2 , 6],
+    [2 , 5 , 3 , 6],
+    [1 , 6 , 2 , 7],
+    [ 2 , 6 , 3 , 7],
+    [ 3 , 1 , 4 , 2],
+    [ 4 , 1 , 5 , 2],
+    [ 3 , 2 , 5 , 3],
+    [ 3 , 3 , 4 , 4],
+    [ 4 , 3 , 5 , 4],
+    [ 3 , 4 , 4 , 5],
+    [ 4 , 4 , 5 , 5],
+    [ 3 , 5 , 5 , 6],
+    [ 3 , 6 , 4 , 7],
+    [ 4 , 6 , 5 , 7],
+    [ 5 , 1 , 6 , 2],
+    [ 6 , 1 , 7 , 2],
+    [ 5 , 2 , 6 , 3],
+    [ 6 , 2 , 7 , 3],
+    [ 5 , 3 , 7 , 4],
+    [ 5 , 4 , 6 , 5],
+    [ 6 , 4 , 7 , 5],
+    [ 5 , 5 , 6 , 6],
+    [ 6 , 5 , 7 , 6],
+    [ 5 , 6 , 7 , 7],
+  ],
+
   clothes: [
     [1, 1, 3, 2],
     [1, 2, 3, 3],
@@ -67,8 +101,32 @@ const arrStyle = {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
+  menuScript()
   universeGallery();
 });
+
+//menu
+
+function menuScript() {
+  const menu = document.querySelector(".menu-wrapper");
+  const blurBg = document.querySelector(".blur-bg-menu");
+  const dropdownWrapper = document.querySelector(".dropdown-wrapper");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  menu.addEventListener("mouseover", () => {
+    blurBg.classList.add("active");
+  });
+  menu.addEventListener("mouseout", () => {
+    blurBg.classList.remove("active");
+  });
+
+  dropdownWrapper.addEventListener("mouseover", () => {
+    dropdownContent.classList.add("active");
+  });
+  dropdownWrapper.addEventListener("mouseout", () => {
+    dropdownContent.classList.remove("active");
+  });
+}
 
 //init grid gallery functions
 const universeGallery = () => {
@@ -107,7 +165,7 @@ const currentView = (btn_data) => {
 };
 
 //constructor grid gallery
-const createGrid = (container = [], btn_data = "all") => {
+const createGrid = (container = [], btn_data = "all2") => {
   const ContainerVisible = document.querySelectorAll(".img-container:not(.hidden)");
   const imgs = document.querySelectorAll(".img-container img");
 
