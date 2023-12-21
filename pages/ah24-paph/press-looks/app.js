@@ -94,6 +94,7 @@ function EventClickLook() {
   const mosaique = document.querySelector('.mosaique-content')
   const slider = document.querySelector('.slider-wrapper')
 
+  const tl = gsap.timeline()
 
   //events toggle mosaique
   btnOpenMosaique.addEventListener('click',() => {
@@ -134,7 +135,9 @@ function EventClickLook() {
     look.addEventListener('click',() => {
       const value = look.dataset.target
       //afficher le bon look
-      displayCurrentLook(value)
+      
+
+      displayCurrentLook(value, tl)
     })
     look.addEventListener('mouseover',() => {
       const value = look.dataset.target
@@ -148,7 +151,7 @@ function EventClickLook() {
     look.addEventListener('click',() => {
       const value = look.dataset.target
       //afficher le bon look
-      displayCurrentLook(value)
+      displayCurrentLook(value, tl)
     })
   })
 
@@ -173,7 +176,7 @@ function EventClickLook() {
 
 }
 
-function displayCurrentLook(value){
+function displayCurrentLook(value, tl){
   if(value){
     //reset class
     document.querySelector('.mosaique-content .active').classList.remove('active')
@@ -192,10 +195,10 @@ function displayCurrentLook(value){
     targetMosaique.classList.add('active')
     targetSlide.classList.add('active')
 
-    const tl = gsap.timeline()
     oldLook.classList.remove('active')
     targetLook.classList.add('active')
     
+    tl.clear();
     tl.to(oldLook,{
       opacity:0,
       blur:20,
@@ -224,6 +227,7 @@ function onEnterLookView() {
   const mosaiqueLook = document.querySelectorAll(".mosaique-content .img-container")
   const hightlightLook = document.querySelectorAll(".look")
   const tl = gsap.timeline()
+
 
   tl.fromTo(sliderLook,{
     opacity:0,
