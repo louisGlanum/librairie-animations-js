@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body .video-section {
+  height: 100vh;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+}
+body .video-section .video-container {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+body .video-section .video-container video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .video-section .cache-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+body .video-section .cache-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .video-section .content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+body .video-section .content .row {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+body .video-section .content .row .col {
+  padding: 90px;
+  flex: 50%;
+  color: white;
+}
+body .video-section .content .row .col .title {
+  opacity: 0;
+  font-size: 50px;
+  font-family: sans-serif;
+  margin: 20px 0;
+}
+body .video-section .content .row .col .para {
+  opacity: 0;
+}
+body .video-section .content .row .col button {
+  opacity: 0;
+  margin: 20px 0;
+  padding: 15px 40px;
+  font-size: 20px;
+  background-color: grey;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 7px;
+}/*# sourceMappingURL=style.css.map */

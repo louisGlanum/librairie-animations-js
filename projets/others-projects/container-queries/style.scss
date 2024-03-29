@@ -1,0 +1,11 @@
+
+--light:false
+
+.light{
+ --light:true
+}
+
+
+
+@import './styles/components/text-image.scss';
+@import './styles/text-images-2/text-image-2.scss';

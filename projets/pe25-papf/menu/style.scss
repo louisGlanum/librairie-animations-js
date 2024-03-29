@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=MonteCarlo&family=Mrs+Saint+Delafield&family=Parisienne&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  .red {
+    height: 100vh;
+  }
+  .black {
+    background-color: black;
+    height: 100vh;
+  }
+}
+
+$heightMenuOpen: 275px;
+$heightDropdown: 215px;
+$heightMenuClose: calc($heightMenuOpen - $heightDropdown);
+
+header {
+  position: relative;
+  padding: 0 40px;
+  position: fixed;
+  width: 100%;
+
+  &:before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: transparent;
+    transform: translateY(-$heightDropdown);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  &.open {
+    &:before {
+      transform: translateY(0);
+    }
+  }
+  &.light {
+    ul.menu a{
+        font-size: 14px;
+    }
+    &:before {
+      background-color: white;
+    }
+
+  }
+  nav {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+
+    ul.menu {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      padding: 0;
+      margin: 0;
+      justify-content: space-around;
+
+      a {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+        transition: font-size .6s ease-in-out;
+      }
+
+      li {
+        list-style-type: none;
+
+        ul.submenu {
+          padding: 20px 0;
+          margin: 0;
+
+          li {
+            list-style-type: none;
+            overflow: hidden;
+            position: relative;
+            padding: 5px 0;
+            pointer-events: none;
+            a {
+              overflow: hidden;
+              position: relative;
+              display: inline-block;
+              font-family: "Kanit", sans-serif;
+              font-weight: 300;
+              font-size: 14px;
+              transform: translateY(-130%);
+              opacity: 1;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.line-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  &::before {
+    background-color: black;
+    height: 1px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  &:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  &:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+}

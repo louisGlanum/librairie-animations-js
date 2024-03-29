@@ -1,0 +1,91 @@
+section#text-image {
+  container-type: inline-size;
+  container-name: text-image-wrapper;
+  --boxed:false;
+  --full:false;
+  --theme:light;
+  /* variants */
+  /* container queries */
+  /* container styles */
+}
+section#text-image.reversed .mainRow {
+  flex-direction: row-reverse;
+}
+section#text-image.isBoxed {
+  --boxed:true;
+}
+section#text-image.dark {
+  --theme: dark;
+}
+section#text-image.full {
+  --full:true;
+}
+section#text-image .bg {
+  background-color: transparent;
+}
+@container text-image-wrapper style(--theme: light) {
+  section#text-image .mainRow {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@container text-image-wrapper style(--theme: dark) {
+  section#text-image .mainRow {
+    background-color: black;
+  }
+}
+@container text-image-wrapper style(--boxed: true) {
+  section#text-image .mainRow {
+    padding: 20px;
+    border-radius: 15px;
+  }
+}
+@container text-image-wrapper style(--full: true) {
+  section#text-image .bg {
+    background-color: blue;
+  }
+  section#text-image .mainRow {
+    background-color: transparent;
+  }
+}
+section#text-image .container-text {
+  container-type: inline-size;
+  container-name: text-wrapper;
+  /* container styles */
+  /* container queries */
+}
+section#text-image .container-text h1 {
+  font-size: 8cqw;
+}
+section#text-image .container-text h3 {
+  font-size: 4cqw;
+}
+section#text-image .container-text p {
+  font-size: 2cqw;
+}
+section#text-image .container-text button {
+  font-size: 2cqw;
+}
+@container text-wrapper style(--theme: light) {
+  section#text-image .container-text h1, section#text-image .container-text h3, section#text-image .container-text p, section#text-image .container-text button {
+    color: orange;
+  }
+}
+@container text-wrapper style(--theme: dark) {
+  section#text-image .container-text h1, section#text-image .container-text h3, section#text-image .container-text p, section#text-image .container-text button {
+    color: white;
+  }
+}
+@container text-wrapper style(--full: true) {
+  section#text-image .container-text h1, section#text-image .container-text h3, section#text-image .container-text p, section#text-image .container-text button {
+    color: white;
+  }
+}
+@container text-wrapper (width >= 600px) {
+  section#text-image .container-text h1 {
+    color: blue;
+  }
+}
+section#text-image .container-image img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=text-image.css.map */

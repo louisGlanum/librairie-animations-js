@@ -1,0 +1,89 @@
+section#text-image {
+
+  container-type: inline-size;
+  container-name: text-image-wrapper;
+  --boxed:false;
+  --full:false;
+  --theme:light;
+
+  /* variants */
+  &.reversed{
+    .mainRow{
+      flex-direction: row-reverse;
+    }
+  }
+  &.isBoxed{
+    --boxed:true;
+  }
+  &.dark{
+    --theme: dark;
+  }
+  &.full{
+    --full:true;
+  }
+  .bg{
+    background-color: transparent;
+  }
+
+  /* container queries */
+ @container text-image-wrapper style(--theme: light){
+  .mainRow{ background-color:rgba(0,0,0,.2);}
+ }
+ @container text-image-wrapper style(--theme: dark){
+  .mainRow{ background-color:black;}
+ }
+ /* container styles */
+@container text-image-wrapper style(--boxed: true){
+  .mainRow{padding:20px; border-radius:15px;}
+}
+@container text-image-wrapper style(--full: true){
+  .bg{
+    background-color:blue;
+  }
+  .mainRow{
+    background-color:transparent;
+  }
+}
+  .container-text {
+    container-type: inline-size;
+    container-name: text-wrapper;
+
+    h1 {
+      font-size: 8cqw;
+    }
+    h3 {
+      font-size: 4cqw;
+    }
+    p{
+      font-size: 2cqw;
+    }
+    button{
+      font-size: 2cqw;
+    }
+
+ 
+  /* container styles */
+    @container text-wrapper style(--theme: light){
+      h1, h3, p, button{color:orange;}
+    }
+    @container text-wrapper style(--theme: dark){
+      h1, h3, p, button{color:white;}
+    }
+    @container text-wrapper style(--full: true){
+      h1, h3, p, button{color:white;}
+    }
+   /* container queries */
+   @container text-wrapper (width >= 600px) {
+    h1 {color: blue;}
+  }
+  }
+
+  .container-image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+

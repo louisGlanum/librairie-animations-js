@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+section.section_hide{
+    height:80vh;
+}
+
+
+    .img_box{
+        transform: scale(0.95);
+        overflow: hidden;
+   
+        img{
+            height:100%;
+            width:100%;
+            object-fit: cover;
+        }
+    }

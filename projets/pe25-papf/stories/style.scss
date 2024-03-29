@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=MonteCarlo&family=Mrs+Saint+Delafield&family=Parisienne&display=swap");
+$colorLink: rgb(180, 74, 3);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.story_wrapper {
+  $transtition-duration: 0.3s;
+
+  .story_grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-auto-columns: 1fr;
+
+    .story_container {
+      position: relative;
+      overflow: hidden;
+
+      .img_cache {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color $transtition-duration ease-in-out;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        container-type: inline-size;
+
+        .story_title {
+            opacity: 0;
+            color:white;
+            font-size: 14cqw;
+            transition: opacity $transtition-duration ease-in-out;
+        }
+      }
+      img {
+        transform: scale(1);
+        transition: transform $transtition-duration ease-in-out;
+      }
+      .story_actions {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        padding: 0.75rem;
+        z-index: 3;
+        transform: translateY(100%);
+        transition: transform $transtition-duration ease-in-out;
+
+        a {
+          text-decoration: none;
+          color: black;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 0.75rem;
+          transition: color $transtition-duration ease-in-out, transform $transtition-duration ease-in-out;
+          &:hover {
+            color: $colorLink;
+            transform: scale(1.15);
+          }
+        }
+      }
+
+      &:hover {
+        .img_cache {
+          background-color: rgba(0, 0, 0, 0.2);
+          .story_title{
+            opacity:1;
+          }
+        }
+        img {
+          transform: scale(1.05);
+        }
+        .story_actions {
+          transform: translateY(0);
+
+          a {
+            animation: 0.6s linear 0.2s linkAnime;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes linkAnime {
+  0% {
+    transform: scale(1);
+    color: rgb(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.15);
+    transform-origin: center;
+    color: $colorLink;
+  }
+  100% {
+    transform: scale(1);
+    color: rgb(0, 0, 0);
+  }
+}
