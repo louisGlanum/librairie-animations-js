@@ -65,12 +65,14 @@
       margin-top: 100px;
 
       .gallery_grid {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(5, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        grid-auto-columns: 1fr;
+        // display: grid;
+        // grid-template-rows: auto;
+        // grid-template-columns: repeat(5, 1fr);
+        // grid-column-gap: 0px;
+        // grid-row-gap: 0px;
+        // grid-auto-columns: 1fr;
+        display: flex;
+        justify-content: center;
         gap: 10px;
 
         .gallery_item {
@@ -81,6 +83,7 @@
             }
           img {
             width: 100%;
+            max-width: 266px;
             height: 100%;
             aspect-ratio: 266 / 131;
             object-fit: cover;

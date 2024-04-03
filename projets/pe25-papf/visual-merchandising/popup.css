@@ -60,12 +60,8 @@
   margin-top: 100px;
 }
 .vm_popup_wrapper .vm_popup_inner .vm_popup_bottom .gallery_grid {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-auto-columns: 1fr;
+  display: flex;
+  justify-content: center;
   gap: 10px;
 }
 .vm_popup_wrapper .vm_popup_inner .vm_popup_bottom .gallery_grid .gallery_item {
@@ -76,6 +72,7 @@
 }
 .vm_popup_wrapper .vm_popup_inner .vm_popup_bottom .gallery_grid .gallery_item img {
   width: 100%;
+  max-width: 266px;
   height: 100%;
   aspect-ratio: 266/131;
   -o-object-fit: cover;
