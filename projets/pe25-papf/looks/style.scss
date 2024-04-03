@@ -55,10 +55,14 @@ header {
         .highlight_wrapper {
           height: 100%;
           .look_wrapper {
+            display:none;
             position: relative;
             padding-left: 13%;
             padding-top: 4%;
             height: 100%;
+            &.visible{
+                display: block;
+            }
             .look_container {
               height: 80vh;
               max-width: 580px;
@@ -105,6 +109,65 @@ header {
                   }
                 }
               }
+            }
+          }
+          .vm_wrapper{
+            display: none;
+            padding-left:80px;
+            &.visible{
+                display: block;
+            }
+            .vm_grid{
+                display: grid;
+                grid-template-columns: minmax(144px, 0.2fr) 1fr;
+                
+                gap:20px;
+
+                .vm_gallery{
+                    
+                    .gallery_item{
+                        cursor: pointer;
+                        position: relative;
+                        display: flex;
+                        margin-bottom:10px;
+                        img{
+                            width:100%;
+                            height:100%;
+                            object-fit: cover;
+                            aspect-ratio:144/71;
+                            
+                        }
+                        &::before{
+                            content:"";
+                            position: absolute;
+                            inset:0;
+                            background-color: rgba(0,0,0,.5);
+                            z-index:2;
+                        }
+                        &.active{
+                            &::before{
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+            .vm_content{
+                height: 80vh;
+                max-width: 739px;
+                position: relative;
+                .img_container {
+                    height: 100%;
+                    max-width: 739px;
+                    aspect-ratio: 739/830;
+                    container-type: inline-size;
+                    img {
+                      height: 100%;
+                      width: 100%;
+                      object-fit: cover;
+                      aspect-ratio: 739/830;
+                    }
+                  }
             }
           }
         }
