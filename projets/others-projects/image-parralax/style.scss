@@ -1,0 +1,23 @@
+.test{
+    height:100vh;
+}
+.img_wrapper{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    container-type: inline-size;
+    gap:20px;
+    height:100vh;
+    .img_box{
+        position: relative;
+        height: 100cqh;
+        overflow: hidden;
+
+        img{
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+    }
+}
+
