@@ -23,8 +23,9 @@ const parralaxImg = (target, speedDefault = 0.5, vertical = true) => {
     })
 }
 
-const lenis = new Lenis()
-
+const lenis = new Lenis({
+    wheelMultiplier:1,
+})
 function raf(time) {
   lenis.raf(time)
   requestAnimationFrame(raf)
