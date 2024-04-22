@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: relative;
+  padding: 40px;
+}
+header nav ul {
+  display: flex;
+  gap: 40px;
+}
+header nav ul li {
+  list-style-type: none;
+}
+header nav ul li button {
+  background-color: transparent;
+  border: none;
+}
+header nav ul li button div {
+  position: relative;
+  overflow: hidden;
+}
+header nav ul li button div::before, header nav ul li button div::after {
+  content: attr(data-label)/'""';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+  font-size: 20px;
+  transition: transform 0.45s ease-in-out, color 0.25s ease-in-out;
+}
+header nav ul li button div::before {
+  transform: translateY(0);
+}
+header nav ul li button div::after {
+  transform: translateY(100%);
+}
+header nav ul li button div:hover::before {
+  color: white;
+  transform: translateY(-100%);
+}
+header nav ul li button div:hover::after {
+  color: white;
+  transform: translateY(0%);
+}
+header nav ul li button a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  opacity: 0;
+}
+header nav ul li.indicator {
+  content: "";
+  position: absolute;
+  inset: 40px 120.031px 74px 40px;
+  background-color: black;
+  z-index: -1;
+  transition: inset 0.25s ease-in-out, width 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transform: scale(1.3);
+  border-radius: 50px;
+  opacity: 0;
+}/*# sourceMappingURL=style.css.map */

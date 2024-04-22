@@ -1,0 +1,74 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+$font-size: 20px;
+header{
+    position:relative;
+    padding:40px;
+
+    nav{
+        ul{
+            display: flex;
+            gap:40px;
+   
+            li{
+                list-style-type: none;
+                button{
+                    background-color: transparent;
+                    border: none;
+
+                    div{
+                        position: relative;
+                        overflow: hidden;
+                        &::before, &::after{
+                            content: attr(data-label) / "\"\"";
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            color:black;
+                            font-size:$font-size;
+                            transition: transform .45s ease-in-out, color .25s ease-in-out;
+                        }
+                        &::before{
+                            transform:translateY(0);
+                        }
+                        &::after{
+                            transform:translateY(100%);
+                        }
+                        &:hover{
+                            &::before{
+                                color:white;
+                                transform:translateY(-100%)
+                            }
+                            &::after{
+                                color:white;
+                                transform:translateY(0%)
+                            }
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        color:black;
+                        font-size:$font-size;
+                        opacity:0;
+                
+                    }
+                }
+                &.indicator{
+                    content: "";
+                    position:absolute;
+                    inset: 40px 120.031px 74px 40px; ;
+                    background-color: black;
+                    z-index:-1;
+                    transition: inset .25s ease-in-out, width .25s ease-in-out, opacity 0.25s ease-in-out;
+                    transform:scale(1.30);
+                    border-radius: 50px;
+                    opacity: 0;
+                }
+           
+            }
+        }
+    }
+}
