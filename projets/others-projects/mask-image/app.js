@@ -30,7 +30,6 @@ const matrixSection_image = () => {
     sections.forEach((section) => {
         const container = section.querySelector('.container');
         const imgContainer = section.querySelector('.img_container');
-        const videoContainer = section.querySelector('.video_container');
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger: section,  // Utilisez le conteneur comme déclencheur
@@ -45,11 +44,8 @@ const matrixSection_image = () => {
 
             tl.to(container, {scaleX: 1, scaleY: 1, rotate: 0})
             .to(imgContainer, {scaleX: 1, scaleY: 1, rotate: 0}, "<")
-            .to(imgContainer, {scaleX: 1, scaleY: 1})
-        }else{
-            tl.to(container, {scaleX: 1, scaleY: 1, rotate: 0})
-            .to(videoContainer, {scaleX: 1, scaleY: 1, rotate: 0}, "<")
-            .to(videoContainer, {scaleX: 1, scaleY: 1})
+   
+     
         }
     })
 }
