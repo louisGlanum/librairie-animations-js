@@ -1,0 +1,74 @@
+.test {
+  height: 100vh;
+  background-color: black;
+}
+
+.matrixSection-image, .matrixSection-image2 {
+  position: relative;
+  height: 100vh;
+}
+.matrixSection-image .container, .matrixSection-image2 .container {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0.5) scaleY(0.5);
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 15px;
+}
+.matrixSection-image .container .img_container, .matrixSection-image2 .container .img_container {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(2) scaleY(2);
+  transition: transform 0.5s ease-in-out;
+}
+.matrixSection-image .container .img_container img, .matrixSection-image2 .container .img_container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.matrixSection-image .container .video_container, .matrixSection-image2 .container .video_container {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(2) scaleY(2);
+  transition: transform 0.5s ease-in-out;
+}
+.matrixSection-image .container .video_container video, .matrixSection-image2 .container .video_container video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.matrixSection-image .my-video-dimensions, .matrixSection-image2 .my-video-dimensions {
+  height: 100%;
+  width: 100%;
+}
+
+.matrixSection-video {
+  position: relative;
+  height: 100vh;
+}
+.matrixSection-video .container {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0.5) scaleY(0.5);
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 15px;
+}
+.matrixSection-video .container .video_container {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(2) scaleY(2);
+  transition: transform 0.5s ease-in-out;
+}
+.matrixSection-video .container .video_container video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.matrixSection-video .my-video-dimensions {
+  height: 100%;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
