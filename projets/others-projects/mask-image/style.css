@@ -10,7 +10,7 @@
 .matrixSection-image .container {
   position: absolute;
   inset: 0;
-  transform: scaleX(0.25) scaleY(0.5);
+  transform: scaleX(0.5) scaleY(0.5);
   transform-style: flat;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;

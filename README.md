@@ -19,3 +19,9 @@ imageOpener
 blocReveal
 1) Actuellement il n'y a que le fade-up, intervenir pour les 3 autres positions 
 2) Rendre la fonction générique pour la duration, delai etc... 
+
+INSPI 
+
+HERO EFFECT : https://www.youtube.com/watch?v=AaO-LmExmkM
+GALLERY SLIDER : https://www.youtube.com/watch?v=v0UoqZJRP5M
+GIVENCHY AWWWARDS : https://www.youtube.com/watch?v=rD6ibr8wgzo

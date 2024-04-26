@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(2);
+  z-index: 1;
+}
+.wrapper .video_container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(2);
+  z-index: 1;
+  opacity: 0;
+}
+.wrapper .video_container .video-js {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .background-black {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 100%;
+  background-color: black;
+}
+.wrapper .container-left {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-20%);
+  background-color: white;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%, 97.128% 62.569%, 89.007% 62.569%, 89.007% 44.634%, 89.007% 44.634%, 88.98% 44.334%, 88.901% 44.049%, 88.775% 43.783%, 88.605% 43.54%, 88.397% 43.325%, 88.154% 43.14%, 87.881% 42.989%, 87.582% 42.877%, 87.262% 42.807%, 86.924% 42.782%, 77.404% 42.782%, 77.404% 37.431%, 83.59% 37.431%, 97.128% 49.465%, 97.128% 62.569%);
+          clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%, 97.128% 62.569%, 89.007% 62.569%, 89.007% 44.634%, 89.007% 44.634%, 88.98% 44.334%, 88.901% 44.049%, 88.775% 43.783%, 88.605% 43.54%, 88.397% 43.325%, 88.154% 43.14%, 87.881% 42.989%, 87.582% 42.877%, 87.262% 42.807%, 86.924% 42.782%, 77.404% 42.782%, 77.404% 37.431%, 83.59% 37.431%, 97.128% 49.465%, 97.128% 62.569%);
+  transition: -webkit-clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84);
+  transition: clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84);
+  transition: clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84), -webkit-clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84);
+  z-index: 3;
+}
+.wrapper .container-right {
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg) translateY(-20%);
+  background-color: white;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%, 97.128% 62.569%, 89.007% 62.569%, 89.007% 44.634%, 89.007% 44.634%, 88.98% 44.334%, 88.901% 44.049%, 88.775% 43.783%, 88.605% 43.54%, 88.397% 43.325%, 88.154% 43.14%, 87.881% 42.989%, 87.582% 42.877%, 87.262% 42.807%, 86.924% 42.782%, 77.404% 42.782%, 77.404% 37.431%, 83.59% 37.431%, 97.128% 49.465%, 97.128% 62.569%);
+          clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%, 97.128% 62.569%, 89.007% 62.569%, 89.007% 44.634%, 89.007% 44.634%, 88.98% 44.334%, 88.901% 44.049%, 88.775% 43.783%, 88.605% 43.54%, 88.397% 43.325%, 88.154% 43.14%, 87.881% 42.989%, 87.582% 42.877%, 87.262% 42.807%, 86.924% 42.782%, 77.404% 42.782%, 77.404% 37.431%, 83.59% 37.431%, 97.128% 49.465%, 97.128% 62.569%);
+  transition: -webkit-clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84);
+  transition: clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84);
+  transition: clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84), -webkit-clip-path 0.7s cubic-bezier(0.15, 0.79, 0.58, 0.84);
+  z-index: 3;
+}/*# sourceMappingURL=style.css.map */
