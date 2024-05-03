@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&display=swap");
+:root {
+  --color-white: #FFFFFF;
+  --color-primaire: #FFCF00;
+  --color-secondaire: #008A83;
+  --font-level-h1: 47px;
+  --font-level-h2: 40px;
+  --font-level-h3: 33px;
+  --font-level-h4: clamp(1.5rem, 0.5074rem + 1.7647vw, 1.875rem);
+  --font-level-p: clamp(0.9375rem, 0.6066rem + 0.5882vw, 1.0625rem);
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h4 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-level-h4);
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-inter);
+  font-size: var(--font-level-p);
+  font-weight: 400;
+}/*# sourceMappingURL=global.css.map */
