@@ -9,13 +9,11 @@ background-color: black;
     .container{
         position:absolute;
         inset:0;
-
         transform: scaleX(0.5)scaleY(0.5);
         transform-style: flat;
         overflow: hidden;
         transition: transform .5s ease-in-out;
         border-radius:15px;
-
 
         .img_container{
             position: absolute;
@@ -23,6 +21,7 @@ background-color: black;
             transform: scaleX(2)scaleY(2);
             transition: transform .5s ease-in-out;
             overflow: hidden;
+
             img{
                 width:100%;
                 height:100%;
