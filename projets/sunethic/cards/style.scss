@@ -124,12 +124,12 @@ section.cards-engagement{
 
             &:hover{
                 &::after{
-                    border: 5px solid var(--color-primary);
+                    border: 5px solid var(--color-secondary);
                     background-color: rgba(0,0,0,0.3);
    
                 }
                 .cross_wrapper{
-                    background-color: var(--color-primary);
+                    background-color: var(--color-secondary);
                 }
             }
         }

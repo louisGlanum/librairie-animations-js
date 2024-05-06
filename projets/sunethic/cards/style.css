@@ -136,9 +136,9 @@ section.cards-engagement .card img {
   height: 100%;
 }
 section.cards-engagement .card:hover::after {
-  border: 5px solid var(--color-primary);
+  border: 5px solid var(--color-secondary);
   background-color: rgba(0, 0, 0, 0.3);
 }
 section.cards-engagement .card:hover .cross_wrapper {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
 }/*# sourceMappingURL=style.css.map */
