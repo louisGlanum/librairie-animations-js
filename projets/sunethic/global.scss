@@ -2,7 +2,7 @@
 
 :root{
     --container: 1250px;
-    
+
     --color-white: #FFFFFF;
     --color-primary: #FFCF00;
     --color-secondary: #008A83;
@@ -14,6 +14,7 @@
     --font-level-p: clamp(0.9375rem, 0.6066rem + 0.5882vw, 1.0625rem);// 17px 900-1230
     --font-level-subtitle: clamp(1.25rem, 0.4228rem + 1.4706vw, 1.5625rem); // 25px 900-1230
 
+    --font-level-button : 16px;
     --font-poppins: "Poppins", sans-serif;
     --font-inter: "Inter", sans-serif;
 }
@@ -52,4 +53,28 @@ p{
     font-size: var(--font-level-p);
     line-height: normal;
     font-weight:300;
+}
+
+.btn-primary{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: var(--color-primaire);
+    font-family: var(--font-poppins);
+    font-size: var(--font-level-button);
+    color: var(--color-white);
+    font-weight:600;
+    padding: 11px 25px;
+    border-radius: 10px;
+    transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
+
+    &:hover{
+        background-color: var(--color-white);
+        border: 2px solid var(--color-primaire);
+        color: var(--color-primaire);
+    }
+
 }
