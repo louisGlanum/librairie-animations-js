@@ -1,8 +1,8 @@
 @import '../global.css';
 section.cards-engagement {
-  max-width: 1250px;
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem 1rem;
 }
 section.cards-engagement .cards_grid {
   display: grid;
@@ -41,8 +41,27 @@ section.cards-engagement .card .content_wrapper h4 {
 section.cards-engagement .card .content_wrapper p {
   color: var(--color-white);
 }
+section.cards-engagement .card .cross_wrapper {
+  position: absolute;
+  z-index: 2;
+  background-color: var(--color-white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+section.cards-engagement .card .cross_wrapper svg {
+  fill: black;
+  transition: fill 0.2s ease-in-out;
+}
 section.cards-engagement .card:nth-child(1) {
   grid-area: 1/1/2/2;
+  transform: translateY(100px);
 }
 section.cards-engagement .card:nth-child(1) .content_wrapper {
   bottom: 0;
@@ -50,6 +69,7 @@ section.cards-engagement .card:nth-child(1) .content_wrapper {
 }
 section.cards-engagement .card:nth-child(2) {
   grid-area: 2/1/3/2;
+  transform: translateY(300px);
 }
 section.cards-engagement .card:nth-child(2) .content_wrapper {
   top: 0;
@@ -64,6 +84,7 @@ section.cards-engagement .card:nth-child(3) .content_wrapper {
 }
 section.cards-engagement .card:nth-child(4) {
   grid-area: 4/1/5/2;
+  transform: translateY(300px);
 }
 section.cards-engagement .card:nth-child(4) .content_wrapper {
   bottom: 0;
@@ -115,6 +136,9 @@ section.cards-engagement .card img {
   height: 100%;
 }
 section.cards-engagement .card:hover::after {
-  border: 5px solid var(--color-primaire);
+  border: 5px solid var(--color-primary);
   background-color: rgba(0, 0, 0, 0.3);
+}
+section.cards-engagement .card:hover .cross_wrapper {
+  background-color: var(--color-primary);
 }/*# sourceMappingURL=style.css.map */

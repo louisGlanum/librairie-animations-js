@@ -1,0 +1,14 @@
+@import '../global.css';
+.title_section {
+  padding: 2rem 1rem;
+}
+.title_section .title_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.1;
+}
+.title_section .title_wrapper .subtitle {
+  color: var(--color-secondary);
+}/*# sourceMappingURL=style.css.map */
