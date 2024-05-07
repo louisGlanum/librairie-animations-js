@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Allura&family=Gilda+Display&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+:root {
+  --cursor-size: 54px;
+  --background: #f2f2f2;
+}
+
+body {
+  background-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gilda Display", serif;
+}
+
+.hero_section {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  container-type: inline-size;
+}
+.hero_section h1 {
+  color: white;
+  font-size: 18.3cqw;
+  font-weight: 100;
+  letter-spacing: -3cqw;
+  pointer-events: none;
+  line-height: 0.6;
+}
+
+.cursor {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.image-flottante {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0) rotate(0);
+  opacity: 0;
+}/*# sourceMappingURL=style.css.map */

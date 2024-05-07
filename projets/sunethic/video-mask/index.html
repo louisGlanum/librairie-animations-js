@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="spacing"></section>
     <section class="video-clip-section">
-        <div class="container">
-          <div class="video_container">
-            <video
-              id="my-video"
-              class="video-js"
-              controls="false"
-              preload="auto"
-              data-setup="{}"
-              autoplay
-              muted
-            >
-              <source src="./video.mp4" type="video/mp4" />
-            </video>
-          </div>
+      <div class="video-clip-container">
+        <div class="video_container">
+          <video id="my-video" class="video-js" controls="false" preload="auto" data-setup="{}" autoplay muted loop>
+            <source src="./video.mkv" type="video/mp4" />
+          </video>
         </div>
-      </section>
-      <section class="spacing"></section>
-      <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-      <script src="./app.js"></script>
-</body>
+      </div>
+    </section>
+    <section class="spacing"></section>
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
 </html>

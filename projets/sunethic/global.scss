@@ -4,13 +4,15 @@
     --container: 1250px;
 
     --color-white: #FFFFFF;
+    --color-grey-1: #e4e4e4;
+    --color-black: #000000;
     --color-primary: #008A83;
     --color-secondary: #FFCF00;
 
-    --font-level-h1: clamp(2.5rem, 0.9583rem + 4.9333vw, 4.8125rem); //40-77px 500-1250
-    --font-level-h2: clamp(1.875rem, 1.4583rem + 1.3333vw, 2.5rem); // 30-40px 500-1250
-    --font-level-h3: clamp(1.5625rem, 1.2292rem + 1.0667vw, 2.0625rem); // 25-33px 500-1250
-    --font-level-h4: clamp(1.375rem, 1.25rem + 0.4vw, 1.5625rem); // 22-25px 500-1250
+    --font-level-h1: clamp(1.875rem, -0.0833rem + 6.2667vw, 4.8125rem); //30-77px 500-1250
+    --font-level-h2: clamp(1.25rem, 0.4167rem + 2.6667vw, 2.5rem); // 20-40px 500-1250
+    --font-level-h3: clamp(1.125rem, 0.5rem + 2vw, 2.0625rem); // 18-33px 500-1250
+    --font-level-h4: clamp(1.0625rem, 0.7292rem + 1.0667vw, 1.5625rem); // 17-25px 500-1250
     --font-level-p: clamp(0.9375rem, 0.6066rem + 0.5882vw, 1.0625rem);// 16-17px 500-1250
     --font-level-subtitle: clamp(1.25rem, 0.4228rem + 1.4706vw, 1.5625rem); // 25px 900-1230
 
@@ -83,7 +85,29 @@ p{
         background-color: var(--color-white);
         border: 2px solid var(--color-primary);
         color: var(--color-primary);
-        padding:8px 25px;
     }
 
+}
+
+.btn-secondary{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    font-family: var(--font-poppins);
+    font-size: var(--font-level-button);
+    color: var(--color-black);
+    font-weight:600;
+    padding: 11px 25px;
+    border-radius: 10px;
+    transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out, padding .2s ease-in-out;
+
+    &:hover{
+        background-color: var(--color-white);
+        border: 2px solid var(--color-secondary);
+        color: var(--color-black);
+    }
 }
