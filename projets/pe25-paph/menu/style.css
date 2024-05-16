@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=MonteCarlo&family=Mrs+Saint+Delafield&family=Parisienne&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrapper_global {
+  position: relative;
+  height: 100vh;
+  --thickness-menu: 40px;
+  --thickness-content: 0px;
+}
+.wrapper_global .wrapper_menu {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  z-index: 20;
+  pointer-events: none;
+}
+.wrapper_global .wrapper_menu .cm {
+  position: absolute;
+  background-color: white;
+}
+.wrapper_global .wrapper_menu .cm--top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--thickness-menu);
+  transform: translateY(-100%);
+}
+.wrapper_global .wrapper_menu .cm--right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: var(--thickness-menu);
+  transform: translateX(100%);
+}
+.wrapper_global .wrapper_menu .cm--bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--thickness-menu);
+  transform: translateY(100%);
+}
+.wrapper_global .wrapper_menu .cm--left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--thickness-menu);
+  transform: translateX(-100%);
+}
+.wrapper_global .wrapper_menu .cm .nav {
+  height: 100%;
+  pointer-events: all;
+}
+.wrapper_global .wrapper_menu .cm .nav ul.menu {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.wrapper_global .wrapper_menu .cm .nav ul.menu .line-menu {
+  list-style-type: none;
+  overflow: hidden;
+}
+.wrapper_global .wrapper_menu .cm .nav ul.menu .line-menu a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+.wrapper_global .wrapper_menu .cm .nav--side ul {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper_global .wrapper_menu .cm .nav--top ul {
+  padding: 0 var(--thickness-menu);
+}
+.wrapper_global .wrapper_menu .cm .nav--top .link-menu {
+  transform: translateY(-100%);
+}
+.wrapper_global .wrapper_menu .cm .nav--bottom .link-menu {
+  transform: translateY(100%);
+}
+.wrapper_global .wrapper_menu .cm .nav--right li {
+  transform: rotate(90deg);
+}
+.wrapper_global .wrapper_menu .cm .nav--right li .link-menu {
+  transform: translateY(-100%);
+}
+.wrapper_global .wrapper_menu .cm .nav--left li {
+  transform: rotate(-90deg);
+}
+.wrapper_global .wrapper_menu .cm .nav--left li .link-menu {
+  transform: translateY(-100%);
+}
+.wrapper_global .wrapper_menu .panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: calc(var(--thickness-content) + 1px);
+  background-color: white;
+  height: 0px;
+  transition: height 0.3s ease-in-out;
+}
+.wrapper_global .wrapper_menu .panel .submenu {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu {
+  list-style-type: none;
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu .link-submenu {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.2s ease-in-out;
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu .link-submenu:hover {
+  color: black;
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories {
+  width: 100%;
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories img {
+  height: 400px;
+  width: 400px;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe {
+  width: 100%;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe img {
+  height: 100px;
+  width: 100px;
+}
+.wrapper_global .wrapper_content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  margin: var(--thickness-content);
+  border: 1px solid black;
+  pointer-events: all;
+}/*# sourceMappingURL=style.css.map */
