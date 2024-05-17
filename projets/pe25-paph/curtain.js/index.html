@@ -8,16 +8,30 @@
 </head>
 <body>
 
-
-<div class="content content1">
-    <div id="canvas" class="canvas canvas1"></div>
-    <div id="water-ripples" class="water-ripples wr1">
-        <img src="mini-hermes.jpg" alt="Photo by David Pisnoy on Unsplash" crossorigin data-sampler="planeTexture" />
-        <img src="min-hermes-2.jpg" crossorigin="" />
+<div class="global_wrapper">
+    <div class="content ripples_wrapper" data-ripples="1">
+        <div class="canvas"></div>
+        <div class="water-ripples">
+            <img src="https://assets.hermes.com/is/image/hermesproduct/blouson-bord-cote-mix-cuir--452820HK01-worn-6-0-0-800-800_g.jpg" alt="Photo by David Pisnoy on Unsplash" crossorigin data-sampler="planeTexture" />
+        </div>
+        <button class="rippleButton" data-ripplesbtn="1">click me</button>
     </div>
-    <button id="rippleButton">click me</button>
+    
+    <div class="content ripples_wrapper" data-ripples="2">
+        <div class="canvas"></div>
+        <div class="water-ripples">
+            <img src="https://assets.hermes.com/is/image/hermesproduct/blouson-bord-cote-mix-cuir--452820HK01-worn-1-0-0-800-800_g.jpg" alt="Photo by David Pisnoy on Unsplash" crossorigin data-sampler="planeTexture" />
+        </div>
+        <button class="rippleButton" data-ripplesbtn="2">click me</button>
+    </div>
+    <div class="contentTest ripples_wrapper" data-ripples="3">
+        <div class="canvas"></div>
+        <div class="water-ripples img_container">
+            <img src="https://assets.hermes.com/is/image/hermesproduct/blouson-bord-cote-mix-cuir--452820HK01-worn-3-0-0-800-800_g.jpg" alt="Photo by David Pisnoy on Unsplash" crossorigin data-sampler="planeTexture" />
+        </div>
+        <button class="rippleButton" data-ripplesbtn="3">click me</button>
+    </div>
 </div>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
 <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>

@@ -14,7 +14,6 @@ class Ripples {
     constructor({
         callback = null,
         curtains = null,
-        container = null,
 
         viscosity = 2,
         speed = 3.5,
@@ -23,7 +22,6 @@ class Ripples {
         // debug
         gui = null,
         guiParams = null,
-        imageSrc = '', // Ajoutez un paramètre pour l'URL de l'image
     } = {}) {
 
         if(!curtains) return;
@@ -397,7 +395,10 @@ class RipplesScene {
         displacementStrength = 4,
         lightIntensity = 5,
         shadowIntensity = 2.5,
-        target = "",
+        target = ".content",
+        canvas = ".canvas",
+        container = ".water-ripples",
+
     } = {}) {
 
         this.params = {
@@ -408,7 +409,9 @@ class RipplesScene {
             displacementStrength: displacementStrength,
             lightIntensity: lightIntensity,
             shadowIntensity: shadowIntensity,
-            target: target
+            target: target,
+            canvas: canvas,
+            container: container,
         };
         this.init(target);
     }
@@ -463,24 +466,16 @@ class RipplesScene {
     }
 
     init(target) {
-        // set up the webgl context
         this.curtains = new Curtains({
-            container: target.querySelector('.canvas'),
-            alpha: false, // we don't need alpha, and setting it to false will improve our text canvas texture rendering
+            container: this.params.canvas,
+            alpha: false, 
         }).onError(() => {
-            // we will add a class to the document body to display original image and title
             document.body.classList.add("no-curtains");
         }).onContextLost(() => {
-            // on context lost, try to restore the context
             this.curtains.restoreContext();
         });
         this.setSceneShaders();
-        console.log(this.curtains.container)
-        // we'll be using this html element to create 2 planes
-        this.sceneElement = this.params.target.querySelector('.water-ripples');
-        console.log(this.sceneElement);
-        // debugging
-        // DAT gui
+        this.sceneElement = this.params.container,
         this.guiParams = {
             displacement: this.params.displacementStrength,
             lights: this.params.lightIntensity,
@@ -768,50 +763,72 @@ class RipplesScene {
 }
 
 
-
-
 window.addEventListener("load", () => {
-    const body = document.querySelector('body')
-    const contents = document.querySelectorAll('.content')
-    let instance = null;
-    const rippleButton = document.querySelector('#rippleButton');
-    if (rippleButton) {
-        // Ajouter un gestionnaire d'événement au clic sur le bouton
-        rippleButton.addEventListener('click', () => {
-          const parent = rippleButton.closest('.content')  
-          const img = parent.querySelector('img')
-          console.log(instance);
-          instance.destroy();
-          let canvas  = parent.querySelector('canvas')
-          canvas.remove()
-          
-          img.src ="./min-hermes-2.jpg"
-            console.log(img);
-            instance = new RipplesScene({
-                target: parent,
-                viscosity: 7.5,
-                speed: 5,
-                size: 1.25,
-        
-                displacementStrength: 1.5,
-                lightIntensity: 5,
-                shadowIntensity: 1,
-            });
-        });
-    }
+    let instanceArray = [];
+    const rippleButtons = document.querySelectorAll('.rippleButton');
 
-    contents.forEach(element => {
-        
-        instance = new RipplesScene({
-            target: element,
+    rippleButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            
+            //remove canvas
+            const parent = btn.closest('.ripples_wrapper') 
+            const canvas = parent.querySelector('canvas')
+            const targetInstance = instanceArray.find(elem => elem.id === Number(btn.dataset.ripplesbtn))
+            
+            targetInstance.instance.destroy();
+            instanceArray = instanceArray.filter(elem => targetInstance !== elem)
+            canvas.remove()
+    
+            // add new image
+            const img = parent.querySelector('img')
+            img.src ="./min-hermes-2.jpg"
+            
+            // create new canvas
+             ripplesEffect(parent, instanceArray)
+             console.log(instanceArray);
+            });
+    })
+    ripplesEffect('.content', instanceArray)
+    ripplesEffect('.contentTest',instanceArray)
+    console.log(instanceArray);
+});
+
+function ripplesEffect(wrapper, instanceArray) {
+
+    const getElements = (wrapper) => ({
+        canvasContainer: wrapper.querySelector('.canvas'),
+        containerRipples: wrapper.querySelector('.water-ripples')
+    });
+    function createInstance(wrapper){
+        const { canvasContainer, containerRipples } = getElements(wrapper);
+
+        return new RipplesScene({
+            target: wrapper,
+            canvas: canvasContainer,
+            container: containerRipples,
             viscosity: 7.5,
             speed: 5,
             size: 1.25,
-    
             displacementStrength: 1.5,
             lightIntensity: 5,
             shadowIntensity: 1,
         });
-      
-    })
-});
+    };
+    function createElement(wrapper){
+        element = {
+            instance: createInstance(wrapper),
+            id: Number(wrapper.dataset.ripples)
+        }
+        instanceArray.push(element)
+    }
+
+    if (typeof wrapper === "string") {
+        // création pour plusieurs images
+        document.querySelectorAll(wrapper).forEach((wrapper) => {
+        createElement(wrapper)
+        });
+    } else {
+        // utile pour le switch d'image
+        createElement(wrapper)
+    }
+}

@@ -1,15 +1,9 @@
-html, body {
+html,
+body {
   min-height: 100%;
 }
 
-#rippleButton {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-body {
+.global_wrapper {
   margin: 0;
   font-size: 18px;
   font-family: "Rakkas", Verdana, sans-serif;
@@ -19,41 +13,22 @@ body {
   gap: 30px;
 }
 
-.canvas-body {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0;
-}
-.canvas-body img {
-  display: block;
-  position: absolute;
-  inset: 0;
+/*** layout ***/
+.ripples_wrapper {
+  position: relative;
 }
 
-/*** layout ***/
-.content {
+.content,
+.contentTest {
   position: relative;
   z-index: 2;
-  touch-action: none; /* disable pull to refresh on mobile */
+  touch-action: none;
   aspect-ratio: 410/880;
   width: 400px;
   height: auto;
 }
-
-/*** canvas ***/
-#water-ripples {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#canvas {
+.content .canvas,
+.contentTest .canvas {
   position: absolute;
   top: 0;
   right: 0;
@@ -61,14 +36,29 @@ body {
   height: 100%;
   z-index: 1;
 }
-
-/*** content ***/
-.dg.ac {
-  z-index: 3 !important;
+.content .water-ripples,
+.contentTest .water-ripples {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 400/858;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .water-ripples img,
+.contentTest .water-ripples img {
+  display: none;
+}
+.content .rippleButton,
+.contentTest .rippleButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-#water-ripples img {
-  display: none;
+.dg.ac {
+  z-index: 3 !important;
 }
 
 /*** handling errors ***/
