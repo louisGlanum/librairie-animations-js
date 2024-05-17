@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
@@ -13,7 +14,7 @@
           <nav class="nav nav--right nav--side">
             <ul class="menu">
               <li class="line-menu">
-                <a href="#" class="link-menu">downloads</a>
+                <a href="#" class="link-menu downloads link-menu-right" data-panel="downloads">downloads</a>
               </li>
             </ul>
           </nav>
@@ -29,53 +30,60 @@
           <nav class="nav nav--bottom">
             <ul class="menu">
               <li class="line-menu">
-                <a href="#" class="link-menu">toggle</a>
+                <div>
+                  <input type="checkbox" class="checkbox" id="checkbox">
+                  <label for="checkbox" class="checkbox-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                  </label>
+                </div>
               </li>
             </ul>
           </nav>
         </div>
         <div class="cm cm--top">
           <nav class="nav nav--top">
+         
             <ul class="menu">
               <li class="line-menu">
                 <a
                   href="#"
                   class="link-menu look link-menu-top"
-                  data-panel="look"
-                  >looks</a
+                  data-panel="look">looks</a
                 >
               </li>
               <li class="line-menu">
                 <a
                   href="#"
                   class="link-menu subclasses link-menu-top"
-                  data-panel="subclasses"
-                  >subclasses</a
+                  data-panel="subclasses">subclasses</a
                 >
               </li>
               <li class="line-menu">
                 <a
                   href="#"
                   class="link-menu link-menu-top"
-                  data-panel="color-stories"
-                  >color stories</a
+                  data-panel="color-stories">color stories</a
                 >
               </li>
               <li class="line-menu">
                 <a href="#" 
                     class="link-menu link-menu-top"
-                    data-panel="mens-universe"
-                >men's universe</a>
+                    data-panel="mens-universe">men's universe</a>
               </li>
               <li class="line-menu">
                 <a href="#" class="link-menu">buying guidelines</a>
               </li>
-              <li class="line-menu"><a href="#" class="link-menu">ecom</a></li>
+              <li class="line-menu">
+                <a href="#" class="link-menu">ecom</a>
+              </li>
             </ul>
           </nav>
         </div>
         <div class="panel">
           <div class="submenu submenu--look">
+       
             <ul>
               <li class="line-submenu">
                 <a class="link-submenu" href="#">commercial</a>
@@ -117,17 +125,135 @@
             </ul>
           </div>
           <div class="submenu submenu--color-stories">
-            <img src="./img1.png" alt="" />
+            <div class="cs_container">
+              <div class="cs_elem">
+                <a href="#" class="cs_link">
+                  <div class="cs_title">story 1</div>
+                  <div class="cs_squares">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="cs_elem">
+                <a href="#" class="cs_link">
+                  <div class="cs_title">story 2</div>
+                  <div class="cs_squares">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="cs_elem">
+                <a href="#" class="cs_link">
+                  <div class="cs_title">story 3</div>
+                  <div class="cs_squares">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="cs_elem">
+                <a href="#" class="cs_link">
+                  <div class="cs_title">story 4</div>
+                  <div class="cs_squares">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
           <div class="submenu submenu--mens-universe">
-            <img src="./img1.png" alt="" />
+            <div class="mu_container">
+              <div class="mu_elem">
+                <a href="#" class="mu_link">
+                  <div class="mu_img"></div>
+                  <div class="mu_title">story 1</div>
+                </a>
+              </div>
+              <div class="mu_elem">
+                <a href="#" class="mu_link">
+                  <div class="mu_img"></div>
+                  <div class="mu_title">story 2</div>
+                </a>
+              </div>
+              <div class="mu_elem">
+                <a href="#" class="mu_link">
+                  <div class="mu_img"></div>
+                  <div class="mu_title">story 3</div>
+                </a>
+              </div>
+              <div class="mu_elem">
+                <a href="#" class="mu_link">
+                  <div class="mu_img"></div>
+                  <div class="mu_title">story 4</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-side">
+          <div class="submenu submenu--downloads">
+            <ul>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">catalogue</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">catalogue</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">catalogue</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">modelario</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">pricing tables</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">commercial lineup</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">press lineup</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">color stories</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">buying guidelines</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">fabric book</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">packshots</a>
+              </li>
+              <li class="line-submenu">
+                <a href="#" class="link-submenu">selling brief</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
       <div class="wrapper_content">
-        <h1>PAPH </h1>
-        <h2>Printemps Été 2024</h2>
-
+        <img class="encadrement" src="./cadre.png" alt="">
+        <div class="test">
+          <h1>PAPH </h1>
+          <h2>Printemps Été 2024</h2>
+        </div>
       </div>
     </div>
 
