@@ -4,7 +4,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Kanit", sans-serif;
-  font-weight: 400;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
@@ -16,14 +15,16 @@ body {
 body {
   --color-primary: #292c35;
   --color-secondary: white;
-  --color-primary-fade: rgba(0,0,0,.4);
+  --color-primary-fade: rgba(0, 0, 0, 0.4);
   --color-pink: pink;
+  --color-svg: invert(0);
 }
 body.dark {
   --color-primary: white;
   --color-secondary: #292c35;
-  --color-primary-fade: rgba(255,255,255,.4);
+  --color-primary-fade: rgba(255, 255, 255, 0.4);
   --color-pink: pink;
+  --color-svg: invert(1);
 }
 
 h1 {
@@ -131,25 +132,70 @@ h2 {
   left: 0;
   right: 0;
   margin: calc(var(--thickness-content) + 1px);
+  margin-bottom: 0px;
   background-color: var(--color-secondary);
   height: 0px;
-  transition: height 0.3s ease-in-out;
+  transition: height 1.5s cubic-bezier(0.16, 0.85, 0.19, 1);
+  overflow: hidden;
 }
 .wrapper_global .wrapper_menu .panel .submenu {
   pointer-events: none;
   position: absolute;
   opacity: 0;
+  min-width: 200px;
 }
 .wrapper_global .wrapper_menu .panel .submenu .line-submenu {
+  overflow-y: hidden;
   list-style-type: none;
+  padding-left: 20px;
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu .link_wrapper {
+  position: relative;
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu .link_wrapper:hover svg path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: stroke-dashoffset 0.7s ease-in;
 }
 .wrapper_global .wrapper_menu .panel .submenu .line-submenu .link-submenu {
   text-decoration: none;
-  color: var(--color-primary-fade);
+  color: var(--color-primary);
   transition: color 0.2s ease-in-out;
+  font-size: 22px;
+  font-weight: 300;
+  transform: translateY(100%);
+  display: inline-block;
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu .link-submenu.disabled {
+  color: var(--color-primary-fade);
+  pointer-events: none;
 }
 .wrapper_global .wrapper_menu .panel .submenu .line-submenu .link-submenu:hover {
-  color: var(--color-primary);
+  color: var(--color-pink);
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu svg {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  bottom: 0;
+  right: -20px;
+  pointer-events: none;
+  height: 100%;
+  width: calc(100% + 40px);
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu svg image {
+  filter: var(--color-svg);
+}
+.wrapper_global .wrapper_menu .panel .submenu .line-submenu svg path {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-opacity: 1;
+  stroke-dasharray: 1110;
+  stroke-dashoffset: 1110;
+  stroke-width: 44px;
+  opacity: 0;
 }
 .wrapper_global .wrapper_menu .panel .submenu--color-stories {
   width: 100%;
@@ -162,15 +208,62 @@ h2 {
   padding: 40px 0;
   gap: 30px;
 }
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem {
+  overflow: hidden;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link {
+  position: relative;
   text-decoration: none;
   color: var(--color-primary);
   display: flex;
   align-items: center;
   gap: 20px;
+  transform: translateY(100%);
+  display: inline-flex;
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link:hover svg path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: stroke-dashoffset 0.7s ease-in;
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link:hover .cs_title {
+  color: var(--color-pink);
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link .cs_link_wrapper {
+  position: relative;
 }
 .wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link .cs_title {
-  font-size: 30px;
+  font-size: 22px;
+  font-weight: 300;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link svg {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  bottom: 0;
+  right: -20px;
+  pointer-events: none;
+  height: 100%;
+  width: calc(100% + 40px);
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link svg image {
+  filter: var(--color-svg);
+}
+.wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link svg path {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-opacity: 1;
+  stroke-dasharray: 1110;
+  stroke-dashoffset: 1110;
+  stroke-width: 44px;
+  opacity: 0;
 }
 .wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link .cs_squares {
   display: flex;
@@ -178,23 +271,39 @@ h2 {
   gap: 2px;
 }
 .wrapper_global .wrapper_menu .panel .submenu--color-stories .cs_container .cs_elem .cs_link .cs_squares .square {
-  height: 30px;
-  width: 50px;
+  height: 44px;
+  width: 70px;
   border: 1px solid var(--color-primary);
 }
 .wrapper_global .wrapper_menu .panel .submenu--mens-universe {
   width: 100%;
+  height: 100%;
 }
 .wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 40px 10px;
   width: 100%;
-  gap: 10px;
+  height: 100%;
+  padding: 40px 0;
+  gap: 20px;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_link_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem {
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem:hover svg path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: stroke-dashoffset 0.7s ease-in;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem:hover .mu_link {
+  color: var(--color-pink);
 }
 .wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem .mu_link {
   text-decoration: none;
@@ -204,14 +313,45 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
+  font-weight: 300;
+  transition: color 0.2s ease-in-out;
+  transform: translateY(100%);
+  display: inline-flex;
+  padding: 0 20px;
 }
-.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem .mu_link .mu_img {
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem svg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  height: 100%;
   width: 100%;
-  height: 200px;
-  border: 1px solid var(--color-primary);
 }
-.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem .mu_link .mu_title {
-  font-size: 30px;
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem svg image {
+  filter: var(--color-svg);
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_elem svg path {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-opacity: 1;
+  stroke-dasharray: 1110;
+  stroke-dashoffset: 1110;
+  stroke-width: 44px;
+  opacity: 0;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_image_wrapper {
+  height: 100%;
+  aspect-ratio: 362/211;
+}
+.wrapper_global .wrapper_menu .panel .submenu--mens-universe .mu_container .mu_image_wrapper img {
+  transition: opacity 0.2s ease-in-out;
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 362/211;
 }
 .wrapper_global .wrapper_menu .panel-side {
   position: absolute;
@@ -282,6 +422,7 @@ h2 {
   inset: 0;
   z-index: 10;
   margin: var(--thickness-content);
+  border: 1px solid var(--color-primary);
   background-color: var(--color-secondary);
   pointer-events: all;
 }
@@ -290,11 +431,4 @@ h2 {
   display: flex;
   flex-direction: column;
   padding: 40px;
-}
-
-.encadrement {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
 }/*# sourceMappingURL=style.css.map */

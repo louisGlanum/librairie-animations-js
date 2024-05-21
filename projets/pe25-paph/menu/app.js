@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   managePanel();
   managePanelSide();
 
+  hoverMensUniverseLink();
 });
 
 const introHome = () => {
@@ -37,11 +38,14 @@ const introHome = () => {
 const submenuPosition = () => {
   const submenuLook = document.querySelector(".submenu--look");
   const submenuSubclasses = document.querySelector(".submenu--subclasses");
+  const submenuMensUniverse = document.querySelector('.submenu--mens-universe')
   const distanceLook = getPositionFromLeft(".look");
   const distanceSubclasses = getPositionFromLeft(".subclasses");
+  const distanceMensUniverse = getPositionFromLeft(".mens-universe");
 
   submenuLook.style.marginLeft = `${distanceLook}`;
   submenuSubclasses.style.marginLeft = `${distanceSubclasses}`;
+  submenuMensUniverse.style.marginLeft = `${distanceMensUniverse}`
 
   window.addEventListener("resize", () => {
     const distanceLook = getPositionFromLeft(".look");
@@ -55,7 +59,7 @@ const getPositionFromLeft = (className) => {
   const element = document.querySelector(className);
   const elementRect = element.getBoundingClientRect();
   // 40 = --thickness-content
-  const distanceLeft = elementRect.left - 40;
+  const distanceLeft = elementRect.left - 40 -20;
   return `${distanceLeft}px`;
 };
 
@@ -103,19 +107,29 @@ const managePanel = () => {
   const linksMenu = document.querySelectorAll(".link-menu-top");
 
   linksMenu.forEach((link) => {
+
     const data = link.dataset.panel;
     const submenu = document.querySelector(`.submenu--${data}`);
+    let links = submenu.querySelectorAll('.link-submenu');
+
+    if(submenu.classList.contains('submenu--color-stories')){
+      links = submenu.querySelectorAll('.cs_link')
+    }
+    if(submenu.classList.contains('submenu--mens-universe')){
+      links = submenu.querySelectorAll('.mu_link')
+    }
+
     const tl = gsap.timeline({ paused: true });
-    tl.to(submenu, { opacity: 1, duration: 0.5, delay: 0.2 });
+    
+    tl
+    .to(submenu, { opacity: 1, duration: 0.5})
+    .to(links, { stagger:{each:0.09}, opacity: 1, y:0, duration: 0.7 },"-=0.5");
 
     link.submenu = submenu;
     link.panel = panel;
     link.tl = tl;
-
-
     submenu.panel = panel;
     submenu.tl = tl;
-
 
     link.addEventListener("mouseenter", openPanel);
     submenu.addEventListener("mouseleave", closePanel);
@@ -123,30 +137,37 @@ const managePanel = () => {
 
   function openPanel() {
     const theme = document.body.classList.contains('dark');
-    console.log(theme);
     linksMenu.forEach((link) => {
       link.tl.restart().pause();
       link.submenu.style.pointerEvents = "none";
     });
     const height = this.submenu.offsetHeight;
-    panel.style.height = `${height}px`;
+    // panel.style.height = `${height}px`;
+
+    panel.style.height = `319px`;
     panel.style.borderBottom = theme ? `1px solid white` : `1px solid #292c35`;
     this.submenu.style.pointerEvents = "all";
+
     this.tl.play();
     setTimeout(() => {
       panel.style.borderBottom = theme ? `1px solid white` : `1px solid #292c35`;
     }, 300);
   }
 
-  function closePanel() {
-    const theme = document.body.classList.contains('dark');
-    panel.style.height = `0px`;
-    this.style.pointerEvents = "none";
-    this.tl.restart().pause();
-    setTimeout(() => {
-    
-      panel.style.borderBottom = theme ? `0px solid white` : `0px solid #292c35`;
-    }, 300);
+  function closePanel(e) {
+
+ 
+
+      const theme = document.body.classList.contains('dark');
+      panel.style.height = `0px`;
+      console.log(e.target);
+      this.style.pointerEvents = "none";
+   
+      this.tl.restart().pause();
+      
+      setTimeout(() => {
+        panel.style.borderBottom = theme ? `0px solid white` : `0px solid #292c35`;
+      }, 300);
   }
 };
 
@@ -169,3 +190,26 @@ const toggleTheme = () => {
     localStorage.setItem("dark", JSON.stringify(switchTheme));
   });
 };
+
+const hoverMensUniverseLink = () => {
+  const links = document.querySelectorAll('.submenu--mens-universe .mu_elem');
+  const imgOfWrapper = document.querySelector('.submenu--mens-universe .mu_image_wrapper img');
+  const container = document.querySelector('.submenu--mens-universe .mu_container')
+  imgOfWrapper.style.opacity = 0;
+  links.forEach((link) => {
+    const imgSrc = link.dataset.img;
+    
+    link.imgSrc = imgSrc;
+    link.addEventListener('mouseenter', inLink)
+    container.addEventListener('mouseleave', outLink)
+  })
+
+  function inLink() {
+    imgOfWrapper.src = this.imgSrc;
+    imgOfWrapper.style.opacity = 1;
+  }
+  function outLink() {
+    imgOfWrapper.src = '#';
+    imgOfWrapper.style.opacity = 0;
+  }
+}
