@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=MonteCarlo&family=Mrs+Saint+Delafield&family=Parisienne&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+body {
+  overflow: hidden;
+}
+
+/* THEME style */
+body {
+    --color-primary: #292c35;
+    --color-blue: #3E5068;
+    --color-secondary: white;
+    --color-grey: #D0D4DC;
+    --color-primary-fade: rgba(0, 0, 0, 0.4);
+    --color-pink: pink;
+    --color-svg: invert(0);
+  
+    &.dark {
+      --color-primary: white;
+      --color-secondary: #292c35;
+      --color-blue: white;
+      --color-grey: rgba(255,255,255,0.4);
+      --color-primary-fade: rgba(255, 255, 255, 0.4);
+      --color-pink: pink;
+      --color-svg: invert(1);
+    }
+  }
+
+  .wrapper_global {
+    position: relative;
+    height: 100vh;
+    --thickness-menu: 40px;
+    --thickness-content: 40px;
+
+  .wrapper_content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    margin: var(--thickness-content);
+    border: 3px solid var(--color-grey);
+    background-color: var(--color-secondary);
+    pointer-events: all;
+  }
+}
+
+.section-look{
+    display:grid;
+    grid-template-columns: 0.6fr 1fr;
+    height:100%;
+
+    .wrapper-looks{
+        border-right:1px solid red;
+        height: 100%;
+        width: 100%;
+
+        position:relative;
+
+        .grid_looks{
+            display:grid;
+            grid-template-columns: repeat(8,auto);
+            grid-template-rows: repeat(6, auto);
+            gap:6px;
+            padding:6px;
+            width:auto;
+            position: absolute;
+            top: 0;
+            left:0;
+            bottom: 0;
+
+            .container_looks{
+                cursor: pointer;
+                height:100%;
+                width:100%;
+                aspect-ratio: 67/138;
+                border:1px solid black;
+                position: relative;
+
+                img{
+                    position: absolute;
+                    inset:0;
+                    width:100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

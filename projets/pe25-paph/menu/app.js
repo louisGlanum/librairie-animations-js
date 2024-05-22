@@ -68,9 +68,12 @@ const managePanelSide = () => {
   const link = document.querySelector(".link-menu-right");
   const data = link.dataset.panel;
   const submenu = document.querySelector(`.submenu--${data}`);
+  let links = submenu.querySelectorAll('.link-submenu');
 
   const tl = gsap.timeline({ paused: true });
-  tl.to(submenu, { opacity: 1, duration: 0.5, delay: 0.2 });
+  tl
+  .to(submenu, { opacity: 1, duration: 0.5, delay: 0.3 })
+  .to(links, { stagger:{each:0.09}, opacity: 1, y:0, duration: 0.7 },"-=0.5");
 
   link.submenu = submenu;
   link.panel = panel;
@@ -83,11 +86,11 @@ const managePanelSide = () => {
   function openSidePanel() {
     const theme = document.body.classList.contains('dark');
     panel.style.width = `300px`;
-    panel.style.borderLeft =  theme ? `1px solid white` : `1px solid #292c35`;
+    panel.style.borderLeft =  theme ? `3px solid rgba(255,255,255,0.4)` : `3px solid #D0D4DC`;
     this.panel.style.pointerEvents = "all";
     this.tl.play();
     setTimeout(() => {
-      panel.style.borderLeft =  theme ? `1px solid white` : `1px solid #292c35`;
+      panel.style.borderLeft =  theme ? `3px solid rgba(255,255,255,0.4)` : `3px solid #D0D4DC`;
     }, 300);
   }
   function closeSidePanel() {
@@ -97,8 +100,8 @@ const managePanelSide = () => {
     this.style.pointerEvents = "none";
     this.tl.restart().pause();
     setTimeout(() => {
-      panel.style.borderLeft = theme ? `1px solid white` : `1px solid #292c35`;
-    }, 300);
+      panel.style.borderLeft = theme ? `0px solid rgba(255,255,255,0.4)` : `0px solid #D0D4DC`;
+    }, 700);
   }
 };
 
@@ -145,29 +148,24 @@ const managePanel = () => {
     // panel.style.height = `${height}px`;
 
     panel.style.height = `319px`;
-    panel.style.borderBottom = theme ? `1px solid white` : `1px solid #292c35`;
+    panel.style.borderBottom = theme ? `3px solid rgba(255,255,255,0.4)` : `3px solid #D0D4DC`;
     this.submenu.style.pointerEvents = "all";
 
     this.tl.play();
     setTimeout(() => {
-      panel.style.borderBottom = theme ? `1px solid white` : `1px solid #292c35`;
+      panel.style.borderBottom = theme ? `3px solid rgba(255,255,255,0.4)` : `3px solid #D0D4DC`;
     }, 300);
   }
 
   function closePanel(e) {
-
- 
-
       const theme = document.body.classList.contains('dark');
       panel.style.height = `0px`;
-      console.log(e.target);
       this.style.pointerEvents = "none";
-   
       this.tl.restart().pause();
       
       setTimeout(() => {
-        panel.style.borderBottom = theme ? `0px solid white` : `0px solid #292c35`;
-      }, 300);
+        panel.style.borderBottom = theme ? `0px solid rgba(255,255,255,0.4)` : `0px solid #292c35`;
+      }, 900);
   }
 };
 

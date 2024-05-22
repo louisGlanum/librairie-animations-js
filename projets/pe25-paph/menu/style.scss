@@ -13,7 +13,9 @@ body {
 /* THEME style */
 body {
   --color-primary: #292c35;
+  --color-blue: #3E5068;
   --color-secondary: white;
+  --color-grey: #D0D4DC;
   --color-primary-fade: rgba(0, 0, 0, 0.4);
   --color-pink: pink;
   --color-svg: invert(0);
@@ -21,6 +23,8 @@ body {
   &.dark {
     --color-primary: white;
     --color-secondary: #292c35;
+    --color-blue: white;
+    --color-grey: rgba(255,255,255,0.4);
     --color-primary-fade: rgba(255, 255, 255, 0.4);
     --color-pink: pink;
     --color-svg: invert(1);
@@ -96,7 +100,7 @@ h2 {
             a {
               display: inline-block;
               text-decoration: none;
-              color: var(--color-primary);
+              color: var(--color-blue);
             }
           }
         }
@@ -143,7 +147,7 @@ h2 {
       top: 0;
       left: 0;
       right: 0;
-      margin: calc(var(--thickness-content) + 1px);
+      margin: calc(var(--thickness-content) + 3px);
       margin-bottom: 0px;
       background-color: var(--color-secondary);
       height: 0px;
@@ -177,12 +181,13 @@ h2 {
           }
           .link-submenu {
             text-decoration: none;
-            color: var(--color-primary);
+            color: var(--color-blue);
             transition: color 0.2s ease-in-out;
             font-size:22px;
             font-weight:300;
             transform: translateY(100%);
             display: inline-block;
+
             &.disabled{
               color: var(--color-primary-fade);
               pointer-events: none;
@@ -261,6 +266,7 @@ h2 {
                   font-weight:300;
                   position: relative;
                   transition: color .2s ease-in-out;
+                  color: var(--color-blue);
                 }
                 svg {
                   position: absolute;
@@ -333,7 +339,7 @@ h2 {
               }
               .mu_link {
                 text-decoration: none;
-                color: var(--color-primary);
+                color: var(--color-blue);
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -389,10 +395,10 @@ h2 {
       top: 0;
       bottom: 0;
       right: 0;
-      margin: calc(var(--thickness-content) + 1px);
+      margin: calc(var(--thickness-content) + 3px);
       background-color: var(--color-secondary);
       width: 0px;
-      transition: width 0.3s ease-in-out;
+      transition: width 1.1s cubic-bezier(.16,.85,.19,1);
 
       .submenu {
         position: absolute;
@@ -403,13 +409,56 @@ h2 {
         .line-submenu {
           list-style-type: none;
           text-align: right;
+          overflow-y: hidden;
+          padding: 0 20px;
+
+          .link_wrapper{
+            position: relative;
+            &:hover {
+              svg {
+                path {
+                  stroke-dashoffset: 0;
+                  opacity:1;
+                  transition: stroke-dashoffset 0.7s ease-in;
+        
+                }
+              }
+            }
+          }
           .link-submenu {
             text-decoration: none;
-            color: var(--color-primary-fade);
+            color: var(--color-blue);
             transition: color 0.2s ease-in-out;
-           
+            font-size:22px;
+            font-weight:300;
+            transform: translateY(100%);
+            display: inline-block;
             &:hover {
-              color: var(--color-primary);
+              color: var(--color-pink);
+            }
+          }
+          svg {
+            position: absolute;
+            top: 0;
+            left: -20px;
+            bottom: 0;
+            right: -20px;
+            pointer-events: none;
+            height: 100%;
+            width: calc(100% + 40px);
+            image{
+              filter: var(--color-svg)
+            }
+            path {
+              fill: none;
+              stroke: white;
+              stroke-linecap: round;
+              stroke-linejoin: miter;
+              stroke-opacity: 1;
+              stroke-dasharray: 1110;
+              stroke-dashoffset: 1110;
+              stroke-width: 44px;
+              opacity:0;
             }
           }
         }
@@ -422,9 +471,10 @@ h2 {
     }
 
     .checkbox-label {
-      background-color: var(--color-primary);
-      width: 90px;
-      height: 20px;
+      background-color: transparent;
+      border: 1px solid var(--color-blue);
+      width: 47px;
+      height: 17px;
       border-radius: 50px;
       position: relative;
       padding: 5px;
@@ -434,27 +484,19 @@ h2 {
       align-items: center;
     }
 
-    .fa-moon {
-      color: var(--color-secondary);
-    }
-
-    .fa-sun {
-      color: var(--color-secondary);
-    }
-
     .checkbox-label .ball {
-      background-color: var(--color-secondary);
-      width: 17px;
-      height: 17px;
+      background-color: var(--color-blue);
+      width: 12px;
+      height: 12px;
       position: absolute;
-      left: 4px;
+      left: 2px;
       top: 2px;
       border-radius: 50%;
       transition: transform 0.2s linear;
     }
 
     .checkbox:checked + .checkbox-label .ball {
-      transform: translateX(65px);
+      transform: translateX(27px);
     }
   }
 
@@ -463,7 +505,7 @@ h2 {
     inset: 0;
     z-index: 10;
     margin: var(--thickness-content);
-    border: 1px solid var(--color-primary);
+    border: 3px solid var(--color-grey);
     background-color: var(--color-secondary);
     pointer-events: all;
 
