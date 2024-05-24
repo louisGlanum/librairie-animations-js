@@ -1,41 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Allura&family=Gilda+Display&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Albert Sans", sans-serif;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-body {
-  overflow: hidden;
-}
-
-
-/* THEME style */
-body {
-    --color-primary: #292c35;
-    --color-blue: #3E5068;
-    --color-secondary: white;
-    --color-grey: #D0D4DC;
-    --color-primary-fade: rgba(0, 0, 0, 0.4);
-    --color-pink: pink;
-    --color-svg: invert(0);
-  
-    &.dark {
-      --color-primary: white;
-      --color-secondary: #292c35;
-      --color-blue: white;
-      --color-grey: rgba(255,255,255,0.4);
-      --color-primary-fade: rgba(255, 255, 255, 0.4);
-      --color-pink: pink;
-      --color-svg: invert(1);
-    }
-    @media (max-aspect-ratio: 16/11) {
-      
-    }
-  }
-
   .wrapper_global {
     position: relative;
     height: 100vh;
@@ -57,9 +19,8 @@ body {
     display:grid;
     grid-template-columns: auto 1fr;
     height:100%;
-
+    
     .wrapper-looks{
-        border-right:1px solid red;
         height: 100%;
         position:relative;
 
@@ -77,8 +38,12 @@ body {
                 height:100%;
                 width:100%;
                 aspect-ratio: 67/138;
-                border:1px solid black;
+                border:1px solid transparent;
                 position: relative;
+
+                &.active{
+                  border:1px solid var(--color-primary);
+                }
 
                 img{
                     position: absolute;
@@ -89,6 +54,7 @@ body {
             }
         }
     }
+
     .wrapper-look{
       container-type: inline-size;
       width: 100%;
@@ -96,23 +62,37 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+      --translateBefore: 0%;
 
+      &::before{
+        content:"";
+        position: absolute;
+        inset:0;
+        z-index:2;
+        background-color: var(--color-secondary);
+        transform: translateY(var(--translateBefore));
+      }
       .look_container{
         display: flex;
-        height: 70cqh;
-        width: 65cqw;
+        height: 73cqh;
+        // width: 37cqw;
         display:flex;
         gap:20px;
+        position: relative;
+
         .image_container{
           aspect-ratio: 505 / 692;
           height: 100%;
           width: 100%;
           flex:1;
-
+          overflow: hidden;
           img{
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform: scale(1.5)
           }
         }
         .infos_container{ 
@@ -120,57 +100,120 @@ body {
           container-type: inline-size;
           display: flex;
           flex-direction: column;
-
+          position: absolute;
+          bottom:0;
+          right: -110%;
+          width: 100%;
+          color: var(--color-blue);
+          .box{
+            overflow: hidden;
+          }
           .spacing{
             flex:1;
           }
           .look-name{
-              font-size: 10.9cqw;
+              font-size: 5.9cqw;
               font-weight:100;
               line-height: 1.6;
+              transform: translateY(300%);
+              opacity:0;
           }
           .look-video-button{
+            transform: translateY(300%);
+            opacity:0;
+
             button{
               background-color: transparent;
               border: none;
-
+              cursor: pointer;
+              
               svg{
                 height: 25px;
                 width: 25px;
+                fill: var(--color-blue);
               }
             }
           }
           .infos-details{
-            margin-top: 3cqh;
-            color: var(--color-blue);
+            margin-top: 2cqh;
+
+      
             .ref{
-              font-size:5.9cqw;
+              font-size: 3.8cqw;
               line-height: 1;
               font-weight: 200;
+              transform: translateY(300%);
+              opacity:0;
             }
             .element-title{
-              font-size: 7.2cqw;
+              font-size: 4.6cqw;
               line-height: 1.4;
               font-weight: bold;
+              transform: translateY(300%);
+              opacity:0;
             }
             .type{
-              font-size:6cqw;
+              font-size:4.3cqw;
               font-weight: 300;
               line-height: 1.2;
+              transform: translateY(300%);
+              opacity:0;
             }
             .wholesale-price{
-              font-size:5cqw;
+              font-size: 3.8cqw;
               font-weight:200;
               line-height: 1.2;
+              transform: translateY(300%);
+              opacity:0;
             }
             .retail-price{
-              font-size:5cqw;
+              font-size: 3.8cqw;
               font-weight:200;
               line-height: 1.2;
+              transform: translateY(300%);
+              opacity:0;
             }
           }
         }
       }
     }
 
+    .wrapper-video{
+      position: absolute;
+      inset:0;
+      background-color: white;
+      opacity:0;
+      pointer-events: none;
+      
+      .container-video{
+        height:100%;
+        opacity:1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .video-js{
+        width:100%;
+        height:100%;
+
+           video{
+             aspect-ratio: 16 / 9;
+             background-color: var(--color-secondary);
+           }
+        }
+        .close-button{
+            position: absolute;
+            top: 1%;
+            right: 1%;
+            height: 50px;
+            width: 50px;
+            z-index: 10;
+            cursor: pointer;
+            svg{
+              fill: var(--color-primary)
+            }       
+        }
+    }
+  }
 }
