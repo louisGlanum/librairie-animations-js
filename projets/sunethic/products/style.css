@@ -4,14 +4,25 @@
 }
 .product-section .product-wrapper-top {
   background-color: black;
-  height: 28cqw;
+  height: 45cqw;
+}
+@media (min-width: 576px) {
+  .product-section .product-wrapper-top {
+    height: 33cqw;
+  }
+}
+@media (min-width: 1025px) {
+  .product-section .product-wrapper-top {
+    height: 28cqw;
+    max-height: 750px;
+  }
 }
 .product-section .product-wrapper-top .product-container-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4.7cqw 0;
+  padding: 4.7cqw 2cqw;
   gap: 10px;
 }
 .product-section .product-wrapper-top .product-container-title .subtitle {
@@ -19,19 +30,39 @@
 }
 .product-section .product-wrapper-top .product-container-title .title {
   color: white;
+  text-align: center;
 }
 .product-section .product-wrapper-bottom {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-top: -10cqw;
+}
+@media (min-width: 1025px) {
+  .product-section .product-wrapper-bottom {
+    flex-direction: row;
+  }
 }
 .product-section .product-wrapper-bottom .product-container {
   container-type: inline-size;
   background: var(--color-grey-1);
   border-radius: 30px;
-  width: 38cqw;
-  max-width: 605px;
+  width: 95cqw;
+  max-width: 900px;
+}
+@media (min-width: 576px) {
+  .product-section .product-wrapper-bottom .product-container {
+    max-width: 605px;
+    width: 75cqw;
+  }
+}
+@media (min-width: 1025px) {
+  .product-section .product-wrapper-bottom .product-container {
+    max-width: 605px;
+    width: 38cqw;
+  }
 }
 .product-section .product-wrapper-bottom .product-container .product-content {
   padding: 5cqw;
@@ -67,9 +98,11 @@
 .product-section .product-wrapper-bottom .product-container .product-content .text-container .product-title {
   margin: 2cqw 0;
   text-transform: uppercase;
+  font-size: 4.2cqw;
 }
 .product-section .product-wrapper-bottom .product-container .product-content .text-container .product-text {
   font-weight: 500;
+  font-size: 3cqw;
 }
 .product-section .product-wrapper-bottom .product-container .product-content .reassurance-container {
   display: flex;
@@ -85,10 +118,13 @@
 }
 .product-section .product-wrapper-bottom .product-container .product-content .reassurance-container .reassurance-item img {
   width: auto;
-  max-height: 58px;
+  max-height: 10cqw;
   height: auto;
 }
-.product-section .product-wrapper-bottom .product-container .product-content .reassurance-container .reassurance-item span {
+.product-section .product-wrapper-bottom .product-container .product-content .reassurance-container .reassurance-item .reassurance-text {
+  font-size: 3cqw;
+}
+.product-section .product-wrapper-bottom .product-container .product-content .reassurance-container .reassurance-item .reassurance-text span {
   display: block;
   font-weight: 700;
 }
@@ -102,12 +138,25 @@
   font-style: italic;
   font-family: var(--font-poppins);
   font-weight: 400;
+  margin-bottom: 3cqw;
 }
 .product-section .product-wrapper-bottom .product-container .product-content .description-container .description-items {
   display: flex;
   justify-content: space-between;
 }
+.product-section .product-wrapper-bottom .product-container .product-content .description-container .description-items .item {
+  position: relative;
+}
+.product-section .product-wrapper-bottom .product-container .product-content .description-container .description-items .item .item-subtitle {
+  position: absolute;
+  top: -3cqw;
+  left: 0;
+  font-size: 2.5cqw;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+}
 .product-section .product-wrapper-bottom .product-container .product-content .description-container .description-items .item .item-title {
+  font-size: 3cqw;
   font-family: var(--font-poppins);
   font-weight: 600;
 }
@@ -115,9 +164,15 @@
   font-family: var(--font-inter);
   font-weight: 700;
   color: var(--color-primary);
-  font-size: var(--font-level-h3);
+  font-size: 5.5cqw;
 }
 .product-section .product-wrapper-bottom .product-container .product-content .description-container .description-items .item .item-intrapaginal {
   font-family: var(--font-inter);
-  font-size: 14px;
+  font-size: 2.5cqw;
+}
+.product-section .product-wrapper-bottom .product-container .product-content .cat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5cqw 0;
 }/*# sourceMappingURL=style.css.map */
