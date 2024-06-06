@@ -1,0 +1,139 @@
+@import "../global.css";
+
+.product-section{
+    container-type: inline-size;
+
+    .product-wrapper-top{
+        background-color: black;
+        height:28cqw;
+        .product-container-title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4.7cqw 0;
+            gap:10px;
+            .subtitle{
+                color:white;
+            }
+            .title{
+                color:white;
+            }
+        }
+    }
+    .product-wrapper-bottom{
+        display:flex;
+        justify-content: center;
+        gap:10px;
+        margin-top:-10cqw;
+
+        .product-container{
+            container-type:inline-size;
+            background: var(--color-grey-1);
+            border-radius: 30px;
+            width: 38cqw;
+            max-width: 605px;
+
+            .product-content{
+                padding:5cqw;
+
+                .img-container{
+                    aspect-ratio: 556/284;
+                    overflow: hidden;
+                    
+                    img{
+                        width: 100%;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+                .tag-container{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding:2cqw 0;
+
+                    .tags{
+                        font-size: var(--font-level-tag);
+                        font-family: var(--font-poppins);
+                        font-weight: 600;
+                    }
+                    .madeinfrance{
+                        display: flex;
+                        align-items: center;
+                        gap:5px;
+                        font-size: 14px;
+                        font-family: var(--font-inter);
+                    }
+                }
+                .text-container{
+                    .product-title{
+                        margin:2cqw 0;
+                        text-transform: uppercase;
+                    }
+                    .product-text{
+                        font-weight: 500;
+                    }
+                }
+                .reassurance-container{
+                    display: flex;
+                    gap:4cqw;
+                    margin:4cqw 0;
+
+                    .reassurance-item{
+                        font-family: var(--font-inter);
+                        font-size: var(--font-level-p);
+                        display: flex;
+                        align-items: center;
+                        gap:10px;
+
+                        img{
+                            width: auto;
+                            max-height:58px;
+                            height:auto;
+                        }
+                        span{
+                            display: block;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .description-container{
+                    background-color: white;
+                    padding:3cqw;
+                    border-radius: 30px;
+                    .note{
+                        color:var(--color-primary);
+                        font-style: italic;
+                        font-family: var(--font-poppins);
+                        font-weight:400;
+                    }
+                    .description-items{
+                        display:flex;
+                        justify-content: space-between;
+              
+
+                        .item{
+                            .item-title{
+                                font-family: var(--font-poppins);
+                                font-weight:600;
+                            }
+                            .item-note{
+                                font-family: var(--font-inter);
+                                font-weight: 700;
+                                color: var(--color-primary);
+                                font-size: var(--font-level-h3);
+                            }
+                            .item-intrapaginal{
+                                font-family: var(--font-inter);
+                                font-size:14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
