@@ -1,12 +1,22 @@
 window.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
+    LenisInit();
     heroAnimation();
     titlesAnimation();
     cardsAnimation();
     videoMaskAnimation();
     testimonialAnimation();
+    productsHomeAnimation();
 })
+const LenisInit = () => {
+const lenis = new Lenis()
 
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+}
 const heroAnimation = () => {
     const section = document.querySelector('.hero_section')
     const title = section.querySelector('h1');
@@ -80,7 +90,6 @@ const videoMaskAnimation = () => {
     tl.to(container, {scale: 1}).to(videoContainer, {scale: 1}, "<")
 }
 
-
 const testimonialAnimation = () => {
     const section = document.querySelector('.testimonial_section');
     const image = section.querySelector('.testimonial_img');
@@ -95,4 +104,28 @@ const testimonialAnimation = () => {
         })
         tl.to(image, {scale:1})
     }
+}
+const productsHomeAnimation = () => {
+    const section = document.querySelector('section.product-section');
+    const subtitle = section.querySelector('.subtitle');
+    const title = section.querySelector('.title');
+    const productContainers = section.querySelectorAll('.product-container');
+    console.log(productContainers);
+    const box = section.querySelectorAll('.box');
+    const tl = gsap.timeline({
+        scrollTrigger:{
+            trigger:section,
+            start:"top 80%",
+            end:"top top",
+            markers:true,
+            scrub:true
+        }
+    });
+
+    tl.to(subtitle, {y:0})
+    .to(title, {y:0},"<")
+    .to(box, {overflow:"visible"})
+    .to(title, {"--underline-width":"100%"})
+    .to(productContainers[0], {y:0, opacity:1},"<")
+    .to(productContainers[1], {y:0, opacity:1},"<")
 }

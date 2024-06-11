@@ -268,3 +268,214 @@ section.testimonial_section{
         }
     }
 }
+section.product-section{
+    container-type: inline-size;
+
+    .product-wrapper-top{
+        background-image: url('./assets/background-products.png');
+        background-repeat: none;
+        background-size: cover;
+        height:45cqw;
+
+        @media(min-width:576px){
+            height:33cqw;
+        }
+        @media(min-width:1025px){
+            height:28cqw;
+            max-height:750px;
+        }
+     
+        .product-container-title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4.7cqw 2cqw;
+            gap:10px;
+            .box{
+                overflow: hidden;
+            }
+            .subtitle{
+                color:white;
+                transform: translateY(100%)
+            }
+            .title{
+                color:white;
+                text-align:center;
+                --underline-width:0%;
+                transform: translateY(100%);
+
+                span{
+                    position:relative;
+                    &::before{
+                        content:"";
+                        position:absolute;
+                        bottom:-10px;
+                        left:0;
+                        right:0;
+                        background-color: var(--color-secondary);
+                        height:3px;
+                        width: var(--underline-width);
+                    }
+                }
+            }
+        }
+    }
+    .product-wrapper-bottom{
+        padding-bottom:100px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        margin-top:-10cqw;
+        @media(min-width:1025px){
+            flex-direction: row;
+        }
+
+        .product-container{
+            container-type: inline-size;
+            background: var(--color-grey-1);
+            border-radius: 30px;
+            width: 95cqw;
+            max-width: 900px;
+            transform: translateY(10%);
+            opacity:0;
+            &:nth-child(2){
+                transform: translateY(10%);
+            }
+            @media(min-width:576px){
+                max-width: 605px;
+                width: 75cqw;
+            }
+            @media(min-width:1025px){
+                max-width: 605px;
+                width: 38cqw;
+            }
+
+            .product-content{
+                padding:5cqw;
+
+                .img-container{
+                    aspect-ratio: 556/284;
+                    overflow: hidden;
+                    
+                    img{
+                        width: 100%;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+                .tag-container{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding:2cqw 0;
+
+                    .tags{
+                        font-size: var(--font-level-tag);
+                        font-family: var(--font-poppins);
+                        font-weight: 600;
+                    }
+                    .madeinfrance{
+                        display: flex;
+                        align-items: center;
+                        gap:5px;
+                        font-size: 14px;
+                        font-family: var(--font-inter);
+                    }
+                }
+                .text-container{
+                    .product-title{
+                        margin:2cqw 0;
+                        text-transform: uppercase;
+                        font-size: 4.2cqw;
+
+                    }
+                    .product-text{
+                        font-weight: 500;
+                        font-size:3cqw;
+                    }
+                }
+                .reassurance-container{
+                    display: flex;
+                    gap:4cqw;
+                    margin:4cqw 0;
+
+                    .reassurance-item{
+                        font-family: var(--font-inter);
+                        font-size: var(--font-level-p);
+                        display: flex;
+                        align-items: center;
+                        gap:10px;
+
+                        img{
+                            width: auto;
+                            max-height:10cqw;
+                            height:auto;
+                        }
+                        .reassurance-text{
+                            font-size:3cqw;
+                            span{
+                                display: block;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+                .description-container{
+                    background-color: white;
+                    padding:3cqw;
+                    border-radius: 30px;
+                    .note{
+                        color:var(--color-primary);
+                        font-style: italic;
+                        font-family: var(--font-poppins);
+                        font-weight:400;
+                        margin-bottom:3cqw;
+                        font-size:3cqw;
+                    }
+                    .description-items{
+                        display:flex;
+                        justify-content: space-between;
+         
+
+                        .item{
+                            position: relative;
+                            .item-subtitle{
+                                position: absolute;
+                                top:-3cqw;
+                                left:0;
+                                font-size:2.5cqw;
+                                font-family: var(--font-poppins);
+                                font-weight:300;
+                            }
+                            .item-title{
+                                font-size:3cqw;
+                                font-family: var(--font-poppins);
+                                font-weight:600;
+                            }
+                            .item-note{
+                                font-family: var(--font-inter);
+                                font-weight: 700;
+                                color: var(--color-primary);
+                                font-size: 5.5cqw;
+                            }
+                            .item-intrapaginal{
+                                font-family: var(--font-inter);
+                                font-size:2.5cqw;
+                            }
+                        }
+                    }
+                }
+                .cat-container{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5cqw 0;
+
+                }
+            }
+        }
+    }
+}

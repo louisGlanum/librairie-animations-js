@@ -4,7 +4,9 @@
     container-type: inline-size;
 
     .product-wrapper-top{
-        background-color: black;
+        background-image: url('./background-products.png');
+        background-repeat: none;
+        background-size: cover;
         height:45cqw;
 
         @media(min-width:576px){
@@ -22,16 +24,37 @@
             justify-content: center;
             padding: 4.7cqw 2cqw;
             gap:10px;
+            .box{
+                overflow: hidden;
+            }
             .subtitle{
                 color:white;
+                transform: translateY(100%)
             }
             .title{
                 color:white;
                 text-align:center;
+                --underline-width:0%;
+                transform: translateY(100%);
+
+                span{
+                    position:relative;
+                    &::before{
+                        content:"";
+                        position:absolute;
+                        bottom:-10px;
+                        left:0;
+                        right:0;
+                        background-color: var(--color-secondary);
+                        height:3px;
+                        width: var(--underline-width);
+                    }
+                }
             }
         }
     }
     .product-wrapper-bottom{
+        padding-bottom:100px;
         display:flex;
         flex-direction: column;
         justify-content: center;
@@ -48,7 +71,11 @@
             border-radius: 30px;
             width: 95cqw;
             max-width: 900px;
-
+            transform: translateY(10%);
+            opacity:0;
+            &:nth-child(2){
+                transform: translateY(10%);
+            }
             @media(min-width:576px){
                 max-width: 605px;
                 width: 75cqw;
@@ -138,6 +165,7 @@
                         font-family: var(--font-poppins);
                         font-weight:400;
                         margin-bottom:3cqw;
+                        font-size:3cqw;
                     }
                     .description-items{
                         display:flex;
