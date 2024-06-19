@@ -9,12 +9,28 @@
   </head>
   <body>
     <section class="spacing"></section>
+    <div id="cursor" class="cursor">
+      <span class="standard"></span>
+      <span class="button-play">
+        <img src="./assets/icone-play.png" alt="">
+      </span>
+    </div>
+  
     <section class="video-clip-section">
       <div class="video-clip-container">
         <div class="video_container">
-          <video id="my-video" class="video-js" controls="false" preload="auto" data-setup="{}" autoplay muted loop>
-            <source src="./video.mkv" type="video/mp4" />
+          <video id="my-video" class="video-js video-loop" controls="false" preload="auto" data-setup="{}" autoplay muted loop>
+            <source src="./assets/video.mkv" type="video/mp4" />
           </video>
+        </div>
+      </div>
+
+      <div class="popup-video-wrapper">
+          <div class="video_container">
+            <button class="close-popup-video">close</button>
+            <video id="my-video" class="video-js video-full" controls='true' preload="auto" data-setup="{}">
+              <source src="./assets/video.mkv" type="video/mp4" />
+            </video>
         </div>
       </div>
     </section>

@@ -158,11 +158,11 @@ section.cards-engagement .card:hover .cross_wrapper {
   background-color: var(--color-secondary);
 }
 
-section.video-clip-section {
+.video-clip-section {
   position: relative;
   height: 100vh;
 }
-section.video-clip-section .video-clip-container {
+.video-clip-section .video-clip-container {
   position: absolute;
   inset: 0;
   transform: scaleX(0.5) scaleY(0.5);
@@ -170,19 +170,42 @@ section.video-clip-section .video-clip-container {
   transition: transform 0.5s ease-in-out;
   border-radius: 15px;
 }
-section.video-clip-section .video-clip-container .video_container {
+.video-clip-section .video-clip-container .video_container {
   position: absolute;
   inset: 0;
   transform: scaleX(2) scaleY(2);
   transition: transform 0.5s ease-in-out;
 }
-section.video-clip-section .video-clip-container .video_container video {
+.video-clip-section .video-clip-container .video_container video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-section.video-clip-section .my-video-dimensions {
+.video-clip-section .popup-video-wrapper {
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.video-clip-section .popup-video-wrapper .close-popup-video {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.video-clip-section .popup-video-wrapper .video_container {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.video-clip-section .popup-video-wrapper .video_container video {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video-clip-section .my-video-dimensions {
   height: 100%;
   width: 100%;
 }

@@ -113,3 +113,28 @@ p{
         color: var(--color-black);
     }
 }
+
+.cursor {
+    display: grid;
+    position: fixed;
+    z-index: 99993;
+    align-items: center;
+    pointer-events: none;
+    justify-items: center;
+  
+    .button-play {
+      position: relative;
+      transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+      opacity: 0;
+    img{
+        width: 80px;
+        height: 80px;
+    }
+    }
+    &.active{
+        cursor:none !important;
+        .button-play{
+            opacity:1;
+        }
+    }
+}  
