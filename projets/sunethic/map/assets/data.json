@@ -1,0 +1,49 @@
+{
+    "chantiers":[
+        {
+            "id":"1",
+            "cp":84000,
+            "ville":"Avignon",
+            "produit":"Kit solaire T1600",
+            "emplacement":"Toit incliné",
+            "image":"./assets/img4.png",
+            "puissance":1600,
+            "nbr":4,
+            "date":"06/12/2023",
+            "coord":{
+                "lat":43.949317,
+                "long":4.805528
+            }            
+        },
+        {
+            "id":"1",
+            "cp":84000,
+            "ville":"Avignon",
+            "produit":"Kit solaire T1700",
+            "emplacement":"Toit incliné",
+            "image":"./assets/img4.png",
+            "puissance":1600,
+            "nbr":4,
+            "date":"06/12/2023",
+            "coord":{
+                "lat":43.949317,
+                "long":4.805528
+            }            
+        },
+        {
+            "id":"1",
+            "cp":34000,
+            "ville":"Montpellier",
+            "produit":"Station solaire F800",
+            "emplacement":"Façade",
+            "image":"./assets/img4.png",
+            "puissance":800,
+            "nbr":2,
+            "date":"02/08/2022",
+            "coord":{
+                "lat":43.610769,
+                "long":3.876716
+            }            
+        }
+    ]
+}

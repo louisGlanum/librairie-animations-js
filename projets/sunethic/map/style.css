@@ -1,3 +1,204 @@
-#map {
-  height: 480px;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&display=swap");
+:root {
+  --container: 1250px;
+  --color-white: #FFFFFF;
+  --color-grey-1: #F8FBFA;
+  --color-black: #000000;
+  --color-primary: #008A83;
+  --color-secondary: #FFCF00;
+  --font-level-h1: clamp(1.875rem, -0.0833rem + 6.2667vw, 4.8125rem);
+  --font-level-h2: clamp(1.25rem, 0.4167rem + 2.6667vw, 2.5rem);
+  --font-level-h3: clamp(1.125rem, 0.5rem + 2vw, 2.0625rem);
+  --font-level-h4: clamp(1.0625rem, 0.7292rem + 1.0667vw, 1.5625rem);
+  --font-level-tag: clamp(0.75rem, 0.4167rem + 1.0667vw, 1.25rem);
+  --font-level-p: clamp(0.9375rem, 0.6066rem + 0.5882vw, 1.0625rem);
+  --font-level-subtitle: clamp(1.25rem, 0.4228rem + 1.4706vw, 1.5625rem);
+  --font-level-button: 1rem;
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.spacing {
+  height: 100vh;
+  background-color: grey;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-level-h1);
+  line-height: normal;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-level-h2);
+  line-height: normal;
+  font-weight: 700;
+}
+
+h4, .subtitle {
+  font-family: var(--font-poppins);
+  font-size: var(--font-level-h4);
+  line-height: normal;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-inter);
+  font-size: var(--font-level-p);
+  line-height: normal;
+  font-weight: 300;
+}
+
+.btn-primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  font-family: var(--font-poppins);
+  font-size: var(--font-level-button);
+  color: var(--color-white);
+  font-weight: 600;
+  padding: 11px 25px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  font-family: var(--font-poppins);
+  font-size: var(--font-level-button);
+  color: var(--color-black);
+  font-weight: 600;
+  padding: 11px 25px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-black);
+}
+
+.cursor {
+  display: grid;
+  position: fixed;
+  z-index: 99993;
+  align-items: center;
+  pointer-events: none;
+  justify-items: center;
+}
+.cursor .button-play {
+  position: relative;
+  transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+  opacity: 0;
+}
+.cursor .button-play img {
+  width: 80px;
+  height: 80px;
+}
+.cursor.active {
+  cursor: none !important;
+}
+.cursor.active .button-play {
+  opacity: 1;
+}
+
+section.section-map .banner {
+  height: 90px;
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: var(--font-level-h2);
+  font-family: var(--font-poppins);
+}
+section.section-map #map {
+  height: 70vh;
+}
+section.section-map .leaflet-popup {
+  width: 300px;
+}
+section.section-map .leaflet-popup .leaflet-popup-content {
+  margin: 0;
+}
+section.section-map .leaflet-popup .leaflet-popup-close-button {
+  display: none;
+}
+section.section-map .leaflet-popup .popup-content-inner {
+  padding: 8px;
+}
+section.section-map .leaflet-popup .img-popup-container {
+  height: 150px;
+}
+section.section-map .leaflet-popup .img-popup-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+section.section-map .leaflet-popup .text-popup-container {
+  padding: 5px 0;
+  font-family: var(--font-poppins);
+}
+section.section-map .leaflet-popup .text-popup-container .title-popup {
+  font-size: 20px;
+  font-weight: bold;
+}
+section.section-map .leaflet-popup .text-popup-container .subtitle-popup {
+  color: rgb(163, 162, 162);
+  font-weight: 600;
+}
+section.section-map .leaflet-popup .text-popup-container .bottom-popup {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+section.section-map .leaflet-popup .text-popup-container .bottom-popup .puissance {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 17px;
+}
+section.section-map .leaflet-popup .text-popup-container .bottom-popup .date {
+  color: grey;
+  font-weight: normal;
+  font-size: 16px;
+}
+section.section-map .marker-cluster-small {
+  background-color: white;
+  box-shadow: 1px 1px 10px rgb(150, 150, 150);
+}
+section.section-map .marker-cluster-small div {
+  background-color: var(--color-primary);
+  color: white;
+  font-family: var(--font-poppins);
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
