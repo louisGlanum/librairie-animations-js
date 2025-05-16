@@ -1,0 +1,108 @@
+:root{
+    --mapbox-primary-color: #333243;
+    --mapbox-secondary-color: #525161;
+    --mapbox-tertiary-color: #ad007c;
+}
+
+
+body { margin: 0; padding: 0; }
+#map-container { position: relative; width: 100%; height: 80vh; }
+#map { 
+    position: absolute; 
+    top: 0; 
+    left:0; 
+    right:0; 
+    width: 100%; 
+    height:100%; 
+
+    &.panel-active{
+        left: 50%;
+    }
+}
+.search-block{
+    position:absolute;
+    z-index:1;
+    bottom:3rem;
+    left:3rem;
+    background-color: var(--mapbox-secondary-color);
+    padding:1rem 2rem;
+    width: 100%;
+    max-width:400px;
+    input{
+        border:1px solid var(--mapbox-tertiary-color);
+        background-color: transparent;
+        color:white;
+        padding:0.5rem 1rem;
+        border-radius:0.5rem;
+        width:100%;
+        max-width:200px;
+        &::placeholder{
+            color: rgba(255, 255, 255, 0.712);
+        }
+    }
+}
+.overlay{
+    position:absolute;
+    inset:0;
+    background-color: transparent;
+    z-index:1;
+    pointer-events: none;
+    transition: background-color 0.3s ease-in-out;
+    &.active{
+        background-color: rgba(0,0,0,0.7);
+    }
+}
+#panel{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    z-index:2;
+    width:100%;
+    max-width:50vw;
+    background-color: var(--mapbox-primary-color);
+    transform:translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    color:white;
+    &.active{
+        transform:translateX(0);
+    }
+    section.infos{
+        padding:2rem 4rem;
+        position:relative;
+        .close-button{
+            position:absolute;
+            top:1rem;
+            right:1rem;
+            background-color: transparent;
+            color:white;
+            border:none;
+            font-size:2rem;
+        }
+        h2{
+            font-size:2rem;
+        }
+        .buttons-group{
+            display:flex;
+            justify-content:space-between;
+            margin-top:2rem;
+            button{
+                background-color: transparent;
+                border:none;
+                color:rgb(196, 196, 196);
+                cursor:pointer;
+                &:hover{
+                    color:white;
+                }
+            }
+        }
+    }
+    
+    .splide{
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+}
+ 
