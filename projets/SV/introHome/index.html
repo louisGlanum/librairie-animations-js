@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HEADER FIXE -->
+
+    <!-- SCROLLSMOOTHER WRAPPER -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <!-- page-wrapper pour l’animation d’entrée -->
+          <div class="page-wrapper">
+            <!-- wrapper interne pour scale (ne perturbe pas ScrollTrigger) -->
+            <div class="page-wrapper-inner">
+              <header class="site-header" id="siteHeader">
+                <nav>
+                  <h1>Menu</h1>
+                </nav>
+              </header>
+              <!-- HERO SECTION -->
+              <section class="hero-section">
+                <img
+                  src="https://images.unsplash.com/photo-1756093158082-37e567772896?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+                <div class="hero-content">
+                  <h1 class="hero-title-1">Hero Section</h1>
+                  <h1 class="hero-title-2">Subtitle</h1>
+                </div>
+              </section>
+
+              <!-- AUTRE CONTENU -->
+              <section class="content">
+                <p>Du contenu supplémentaire…</p>
+                <p>Scroll vers le bas pour tester ScrollSmoother.</p>
+              </section>
+            </div>
+            <!-- page-wrapper-inner -->
+          </div>
+          <!-- page-wrapper -->
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
