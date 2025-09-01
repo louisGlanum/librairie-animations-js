@@ -13,106 +13,86 @@ function initMap() {
             panel.classList.remove('active');
         }
     });
-    let splideInstance;
+ 
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoibG91bG91Y2FzdCIsImEiOiJjbWFxam5mc3YwMHFlMmlxcjN1dGw2bTNoIn0.HzZycVHdgJDgAPBpjh34OQ';
+
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibG91bG91Y2FzdCIsImEiOiJjandiMDR4cjkwZWRjNDNzNnJ2NTJkMzhuIn0.N0FdIoyG8CClDBYPc1Vo0g';
     const map = new mapboxgl.Map({
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/louloucast/cmaw7hfrh004d01s9a4uqd86g',
+        center: [4.805864, 43.95139],
+        zoom: 15.5,
+        pitch: 45,
+        bearing: -17.6,
         container: 'map',
-        center: [4.805864,43.951390], 
-        zoom: 15,
-        // pitch: 74,
-        // bearing: 12.8,
-        // hash: true,
-        style: 'mapbox://styles/louloucast/ckszwrkwo06ep17mnjbmngpio?fresh=true' ,
-        projection: 'globe'
+        antialias: true
     });
 
-        map.on('style.load', () => {
-            map.setConfigProperty('basemap', 'lightPreset', 'dawn');
+    map.on('style.load', () => {
+        // Insert the layer beneath any symbol layer.
+        const layers = map.getStyle().layers;
+        const labelLayerId = layers.find(
+            (layer) => layer.type === 'symbol' && layer.layout['text-field']
+        ).id;
 
-            // use an expression to transition some properties between zoom levels 11 and 13, preventing visibility when zoomed out
-            // const zoomBasedReveal = (value) => {
-            //     return [
-            //         'interpolate',
-            //         ['linear'],
-            //         ['zoom'],
-            //         11,
-            //         0.0,
-            //         13,
-            //         value
-            //     ];
-            // };
-        fetch('./data.json')
-        .then((response) => response.json())
-        .then((properties) => {
-            console.log(properties)
-            properties.forEach((property) => {
-                const marker = new mapboxgl.Marker({
-                    color: '#ad007c'
-                })
-                .setLngLat([property.lng, property.lat])
-                .addTo(map);
-                marker.getElement().addEventListener('click', () => {
-                    console.log('Marker cliqué !');
-                    panel.classList.add('active');
+        // The 'building' layer in the Mapbox Streets
+        // vector tileset contains building height data
+        // from OpenStreetMap.
+        map.addLayer(
+            {
+                'id': 'add-3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 15,
+                'paint': {
+                    'fill-extrusion-color': '#aaa',
 
-                    const h2 = panel.querySelector('h2');
-                    h2.textContent = property.name;
-
-                        const listEl = document.getElementById('carousel-list');
-                        listEl.innerHTML = ''; // 🧼 Vide les anciennes slides
-
-                        property.images.forEach((imgUrl) => {
-                            const li = document.createElement('li');
-                            li.className = 'splide__slide';
-                            li.innerHTML = `<img src="${imgUrl}" alt="${property.name}">`;
-                            listEl.appendChild(li);
-                        });
-
-                        // Démonte l’ancienne instance si elle existe
-                        if (splideInstance) {
-                            splideInstance.destroy(true); // true = détruit DOM + listeners
-                        }
-
-                        // Crée et monte une nouvelle instance
-                        splideInstance = new Splide('#property-carousel', {
-                            type: 'loop',
-                            perPage: 1,
-                            autoplay: true,
-                            pauseOnHover: true,
-                            heightRatio: 0.5,
-                            rewind: false,
-                            speed: 600,
-                            easing: 'ease',
-                            drag: true,
-                            arrows: true,
-                            pagination: true,
-                        });
-
-                        splideInstance.mount();
-            });
-            })
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    // Use an 'interpolate' expression to
+                    // add a smooth transition effect to
+                    // the buildings as the user zooms in.
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.6
+                }
+            },
+            labelLayerId
+        );
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

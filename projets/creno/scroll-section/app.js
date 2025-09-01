@@ -13,7 +13,7 @@ const heroScroll = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".scroll-container",
-      pin: true,
+      pin: false,
       end: "+=4000", // pour gérer la rapidité de l'animation globale
       scrub: 1.5, // à augmenter pour l'effet smooth scroll
 

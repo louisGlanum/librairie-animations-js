@@ -12,7 +12,7 @@ body {
 #map-container {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
 }
 
 #map {
@@ -30,27 +30,68 @@ body {
 .search-block {
   position: absolute;
   z-index: 1;
-  bottom: 3rem;
-  left: 3rem;
-  background-color: var(--mapbox-secondary-color);
+  bottom: 30px;
+  left: 7rem;
+  background-color: var(--mapbox-primary-color);
   padding: 1rem 2rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
 }
-.search-block input {
-  border: 1px solid var(--mapbox-tertiary-color);
-  background-color: transparent;
+.search-block h2 {
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  font-size: 40px;
+  margin-bottom: 3rem;
+  font-family: "Fraunces", serif;
+  position: relative;
+}
+.search-block h2:before {
+  content: "";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background-color: var(--mapbox-tertiary-color);
+}
+.search-block p {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+.search-block .input-element {
+  border: 1px solid white;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 2.5rem;
   max-width: 200px;
+  margin-bottom: 2rem;
 }
-.search-block input::-moz-placeholder {
+.search-block .input-element input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+}
+.search-block .input-element input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.712);
 }
-.search-block input::placeholder {
+.search-block .input-element input::placeholder {
   color: rgba(255, 255, 255, 0.712);
+}
+.search-block .input-element input:focus {
+  outline: none;
+}
+.search-block .input-element svg {
+  color: white;
+  transform: scale(-1, 1);
 }
 
 .overlay {
@@ -72,44 +113,129 @@ body {
   left: 0;
   z-index: 2;
   width: 100%;
-  max-width: 50vw;
-  background-color: var(--mapbox-primary-color);
+  max-width: 100vw;
+  background-color: white;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
-  color: white;
+  display: flex;
 }
 #panel.active {
   transform: translateX(0);
 }
+#panel section.splide {
+  flex: 60%;
+}
+#panel #property-carousel .splide__slide {
+  overflow: hidden;
+}
 #panel section.infos {
+  flex: 40%;
   padding: 2rem 4rem;
   position: relative;
 }
-#panel section.infos .close-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: transparent;
-  color: white;
-  border: none;
-  font-size: 2rem;
-}
-#panel section.infos h2 {
-  font-size: 2rem;
-}
-#panel section.infos .buttons-group {
+#panel section.infos .header-infos {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
-#panel section.infos .buttons-group button {
+#panel section.infos .header-infos .close-button {
   background-color: transparent;
+  color: var(--mapbox-tertiary-color);
   border: none;
-  color: rgb(196, 196, 196);
   cursor: pointer;
 }
-#panel section.infos .buttons-group button:hover {
+#panel section.infos .header-infos .close-button svg {
+  height: 36px;
+  width: 36px;
+}
+#panel section.infos .header-infos .buttons-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+#panel section.infos .header-infos .buttons-group button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  color: var(--mapbox-tertiary-color);
+  cursor: pointer;
+  font-family: "Fraunces", serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  height: 40px;
+}
+#panel section.infos .header-infos .buttons-group button svg {
+  height: 16px;
+  width: 16px;
+  margin-top: 3px;
+}
+#panel section.infos .header-infos .buttons-group button.next-button::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--mapbox-tertiary-color);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: width 0.3s ease-in-out;
+}
+#panel section.infos .header-infos .buttons-group button.next-button:hover:before {
+  width: 100%;
+}
+#panel section.infos .header-infos .buttons-group button.prev-button:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--mapbox-tertiary-color);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+#panel section.infos .header-infos .buttons-group button.prev-button:hover:before {
+  transform: translateX(0%);
+}
+#panel section.infos .header-infos .buttons-group button.prev-button svg {
+  transform: scale(-1, 1);
+}
+#panel section.infos .content-infos h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 44px;
+  margin-bottom: 0.5rem;
+}
+#panel section.infos .content-infos h3 {
+  color: var(--mapbox-tertiary-color);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+#panel section.infos .content-infos p.description {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+#panel section.infos .content-infos .button-group button {
+  background-color: var(--mapbox-tertiary-color);
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+#panel section.infos .content-infos .button-group button:hover {
+  background-color: var(--mapbox-tertiary-color);
 }
 #panel .splide img {
   width: 100%;

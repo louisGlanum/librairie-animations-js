@@ -1,44 +1,112 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Display a map on a webpage</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-<link rel="stylesheet" href="./style.css">
-</head>
-<body>
-<div id="map-container">
-    <div class="overlay"></div>
-    <div id="map"></div>
-    <div class="search-block">
-        <input type="text" id="search-input" placeholder="Rechercher un logement">
-    </div>
-    <div id="panel">
+  <head>
+    <meta charset="utf-8" />
+    <title>Display a map on a webpage</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="map-container">
+      <div class="overlay"></div>
+      <div id="map"></div>
+      <div class="search-block">
+        <h2>
+          Découvrez<br />
+          le patrimoine de<br />
+          Grand Delta Habitat
+        </h2>
+        <p>
+          41 000 logements répartis sur 3 régions,<br />
+          7 départements et 200 communes.
+        </p>
+        <div class="input-element">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g transform="scale(-1,1) translate(-24,0)">
+              <path
+                d="M10 2a8 8 0 105.29 14.29l4.39 4.39a1 1 0 001.42-1.42l-4.39-4.39A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"
+                fill="currentColor"
+              />
+            </g>
+          </svg>
+
+          <input type="text" id="search-input" placeholder="Rechercher..." />
+        </div>
+      </div>
+      <div id="panel">
         <section class="splide" id="property-carousel" aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-                    <ul class="splide__list" id="carousel-list">
-                    </ul>
-            </div>
+          <div class="splide__track">
+            <ul class="splide__list" id="carousel-list"></ul>
+          </div>
         </section>
         <section class="infos">
-            <button class="close-button">x</button>
-            <h2></h2>
-            <h3></h3>
-            <p class="description"></p>
+          <div class="header-infos">
             <div class="buttons-group">
-                <button class="prev-button">Logement précédent</button>
-                <button class="next-button">Logement suivant</button>
+              <button class="prev-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <line x1="4" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round" />
+                  <polyline points="14,6 20,12 14,18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Logement précédent</span>
+              </button>
+              <button class="next-button">
+                <span>Logement suivant</span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <line x1="4" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round" />
+                  <polyline points="14,6 20,12 14,18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
             </div>
+            <button class="close-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="content-infos">
+
+              <h2></h2>
+              <h3></h3>
+              <p class="description"></p>
+              <div class="button-group">
+                <button>PLUS D'INFOS</button>
+              </div>
+          </div>
         </section>
+      </div>
     </div>
-</div>
 
-<script src="app2.js"></script>
-
-</body>
+    <script src="app2.js"></script>
+  </body>
 </html>

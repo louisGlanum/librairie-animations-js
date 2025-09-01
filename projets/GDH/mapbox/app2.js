@@ -14,18 +14,21 @@ function initMap() {
   const overlay = document.querySelector(".overlay");
 
   mapboxgl.accessToken =
-    "pk.eyJ1IjoibG91bG91Y2FzdCIsImEiOiJjbWFxam5mc3YwMHFlMmlxcjN1dGw2bTNoIn0.HzZycVHdgJDgAPBpjh34OQ";
+    "pk.eyJ1IjoibG91bG91Y2FzdCIsImEiOiJjandiMDR4cjkwZWRjNDNzNnJ2NTJkMzhuIn0.N0FdIoyG8CClDBYPc1Vo0g";
 
   map = new mapboxgl.Map({
     container: "map",
     center: [4.805864, 43.95139],
-    zoom: 12,
-    style: "mapbox://styles/louloucast/ckszwrkwo06ep17mnjbmngpio?fresh=true",
+    zoom: 16.15,
+    pitch: 75,
+    bearing: 0,
+    hash: true,
+    style: "mapbox://styles/louloucast/cmaw7hfrh004d01s9a4uqd86g",
     projection: "globe",
   });
 
-    // Ajouter contrôle de zoom et boussole
-    map.addControl(new mapboxgl.NavigationControl());
+  // Ajouter contrôle de zoom et boussole
+  map.addControl(new mapboxgl.NavigationControl());
 
   map.on("load", () => {
     fetch("./data.geojson")
@@ -77,7 +80,7 @@ function initMap() {
             "text-size": 14,
           },
           paint: {
-            "text-color": "#fff",
+            "text-color": "#FFF",
           },
         });
 
@@ -145,12 +148,12 @@ function initMap() {
             layout: {
               "text-field": ["get", "name"],
               "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-              "text-size": 15,
+              "text-size": 18,
               "text-offset": [0, 1.2],
               "text-anchor": "top",
             },
             paint: {
-              "text-color": "#fff",
+              "text-color": "#AD007C",
             },
           });
         };
@@ -162,25 +165,24 @@ function initMap() {
             layers: ["clusters"],
           });
           const clusterId = features[0].properties.cluster_id;
-          map
-            .getSource("properties")
-            .getClusterExpansionZoom(clusterId, function (err, zoom) {
-              if (err) return;
-              map.easeTo({
-                center: features[0].geometry.coordinates,
-                zoom: zoom,
-              });
+          map.getSource("properties").getClusterExpansionZoom(clusterId, function (err, zoom) {
+            if (err) return;
+            map.easeTo({
+              center: features[0].geometry.coordinates,
+              zoom: zoom,
             });
+          });
         });
 
         map.on("click", "unclustered-point", (e) => {
+          console.log(e.features[0]);
           const props = e.features[0].properties;
           const id = parseInt(props.id);
 
           currentIndex = propertiesList.findIndex((p) => p.id === id);
-          injectionPanel(propertiesList[currentIndex]);
-          panel.classList.add("active");
-          overlay.classList.add("active");
+          // injectionPanel(propertiesList[currentIndex]);
+          // panel.classList.add("active");
+          // overlay.classList.add("active");
         });
 
         map.on("mouseenter", "unclustered-point", () => {
@@ -189,10 +191,26 @@ function initMap() {
         map.on("mouseleave", "unclustered-point", () => {
           map.getCanvas().style.cursor = "";
         });
+        map.on("zoom", () => {
+          const currentZoom = map.getZoom();
+          if (currentZoom >= 16 && map.getPitch() !== 75) {
+            map.easeTo({ pitch: 75, duration: 1000 });
+          } else if (currentZoom < 16 && map.getPitch() !== 0) {
+            map.easeTo({ pitch: 0, duration: 1000 });
+          }
+        });
+        map.on("moveend", () => {
+          const currentZoom = map.getZoom();
+
+          if (currentZoom >= 16 && map.getPitch() !== 75) {
+            map.easeTo({ pitch: 75, duration: 1000 });
+          } else if (currentZoom < 16 && map.getPitch() !== 0) {
+            map.easeTo({ pitch: 0, duration: 1000 });
+          }
+        });
       });
   });
 }
-
 
 // ----------------- init panel ----------------
 function initPanel() {
@@ -208,8 +226,7 @@ function initPanel() {
   });
 
   prevButton.addEventListener("click", function () {
-    currentIndex =
-      (currentIndex - 1 + propertiesList.length) % propertiesList.length;
+    currentIndex = (currentIndex - 1 + propertiesList.length) % propertiesList.length;
     injectionPanel(propertiesList[currentIndex]);
   });
 
@@ -235,7 +252,7 @@ function injectionPanel(data) {
 
   h2.textContent = data.name;
   h3.textContent = `${data.type} – ${data.city}`;
-  description.textContent = data.description;
+  description.innerHTML  = data.description;
 
   injectionCarousel(data);
 }
@@ -258,7 +275,9 @@ function injectionCarousel(data) {
 
   splideInstance = new Splide("#property-carousel", {
     type: "loop",
-    perPage: 1,
+    direction: 'ttb',
+    height   : '100%',
+    perPage: 1.5,
     autoplay: true,
     pauseOnHover: true,
     heightRatio: 0.5,
@@ -266,6 +285,7 @@ function injectionCarousel(data) {
     speed: 600,
     easing: "ease",
     drag: true,
+    gap: "1rem",
     arrows: true,
     pagination: true,
   });
@@ -285,10 +305,7 @@ function initSearch(map, geojson) {
     const filteredFeatures = query
       ? geojson.features.filter((feature) => {
           const { name, city } = feature.properties;
-          return (
-            name.toLowerCase().includes(query) ||
-            city.toLowerCase().includes(query)
-          );
+          return name.toLowerCase().includes(query) || city.toLowerCase().includes(query);
         })
       : geojson.features;
 

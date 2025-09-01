@@ -8,9 +8,11 @@
         "id": 1,
         "name": "Villa Les Lavandes",
         "type": "Maison",
-        "description": "Belle villa située proche du centre d'Avignon.",
+        "description": "Nichée dans un quartier résidentiel paisible à seulement quelques minutes du centre animé d'Avignon, la Villa Les Lavandes offre un cadre de vie idéal pour une famille ou pour un séjour de détente. Cette belle propriété dispose de vastes pièces lumineuses, d’un jardin arboré soigneusement entretenu et d’une terrasse ombragée parfaite pour les repas en extérieur.<br/><br/> Sa piscine privée et son agencement intérieur raffiné en font un lieu d’exception où le charme provençal rencontre le confort moderne.",
         "city": "Avignon",
         "images": [
+          "https://images.unsplash.com/photo-1512403754473-27835f7b9984?q=80&w=1430&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1374&auto=format&fit=crop",
           "https://images.unsplash.com/photo-1512403754473-27835f7b9984?q=80&w=1430&auto=format&fit=crop"
         ]
       }
@@ -22,7 +24,7 @@
         "id": 2,
         "name": "Résidence du Palais",
         "type": "Appartement",
-        "description": "Appartement moderne dans le centre historique.",
+        "description": "Situé en plein cœur du centre historique d’Avignon, cet appartement allie charme de l’ancien et modernité. Entièrement rénové, il bénéficie d’un grand séjour lumineux avec parquet ancien, de hauts plafonds, et d’une cuisine ouverte parfaitement équipée. À proximité immédiate du Palais des Papes, il est idéal pour les amateurs de culture et d’histoire souhaitant vivre dans l’un des quartiers les plus prestigieux de la ville.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1374&auto=format&fit=crop"
@@ -36,7 +38,7 @@
         "id": 3,
         "name": "Résidence du Palais 2",
         "type": "Appartement",
-        "description": "Appartement lumineux proche du Palais des Papes.",
+        "description": "Ce superbe appartement lumineux est idéalement situé à quelques pas du Palais des Papes. Il se compose d’un grand séjour avec vue dégagée, de deux chambres confortables, et d’une salle de bain moderne. La décoration intérieure soigneusement pensée mêle éléments contemporains et touches traditionnelles provençales. C’est une opportunité unique d’acquérir un bien de standing au cœur de la cité papale.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1512403754473-27835f7b9984?q=80&w=1430&auto=format&fit=crop"
@@ -50,7 +52,7 @@
         "id": 4,
         "name": "Le Clos des Oliviers",
         "type": "Maison",
-        "description": "Maison traditionnelle avec jardin et piscine.",
+        "description": "Le Clos des Oliviers est une maison traditionnelle provençale offrant une belle surface habitable sur un terrain arboré de plus de 800 m². Vous y trouverez un salon spacieux avec cheminée, une cuisine indépendante, ainsi qu’un espace nuit comprenant trois chambres. Le jardin est un véritable havre de paix, agrémenté d’une piscine à débordement, d’un coin barbecue et d’une oliveraie centenaire. Idéal pour les amoureux de la nature et du calme, à deux pas de la ville.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1440&auto=format&fit=crop"
@@ -64,7 +66,7 @@
         "id": 5,
         "name": "Le Jardin Secret",
         "type": "Appartement",
-        "description": "Appartement calme avec vue sur jardin.",
+        "description": "Ce charmant appartement se distingue par son atmosphère apaisante et sa vue imprenable sur un jardin privé, rare en plein centre-ville. Doté d’un grand séjour ouvert sur une terrasse, il dispose également d’une chambre principale avec dressing, d’une salle de bain contemporaine, et d’un coin bureau. L’ensemble est baigné de lumière naturelle grâce à de larges baies vitrées, offrant un cadre de vie serein et agréable au quotidien.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1501183638714-7f3f3a54a3a3?q=80&w=1400&auto=format&fit=crop"
@@ -78,7 +80,7 @@
         "id": 6,
         "name": "Maison des Remparts",
         "type": "Maison",
-        "description": "Maison au pied des remparts historiques.",
+        "description": "Cette propriété unique est située au pied des célèbres remparts d’Avignon. Restaurée avec soin, elle conserve le charme de l’ancien tout en offrant un confort moderne : parquet d’origine, poutres apparentes, chauffage au sol, et cuisine haut de gamme. L’extérieur propose un petit jardin secret entouré de pierres centenaires, idéal pour les dîners d’été ou les après-midis lecture. Un véritable bijou pour les amateurs de patrimoine.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1472220625704-91e1462799b2?q=80&w=1350&auto=format&fit=crop"
@@ -92,7 +94,7 @@
         "id": 7,
         "name": "Appartement du Théâtre",
         "type": "Appartement",
-        "description": "Appartement moderne proche du théâtre d'Avignon.",
+        "description": "À seulement quelques mètres du théâtre d’Avignon, ce superbe appartement offre une localisation privilégiée pour les amateurs de culture et d’événements. Il comprend un grand espace de vie, une cuisine américaine moderne, deux chambres confortables et une salle de bain contemporaine. L’ambiance intérieure est chaleureuse et élégante, parfaite pour une résidence principale ou un investissement locatif haut de gamme.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1400&auto=format&fit=crop"
@@ -106,7 +108,7 @@
         "id": 8,
         "name": "Loft du Quai",
         "type": "Loft",
-        "description": "Loft spacieux avec vue sur le Rhône.",
+        "description": "Ce loft spacieux séduit par son design industriel et ses volumes généreux. Offrant une belle hauteur sous plafond, une grande pièce de vie avec cuisine ouverte et mezzanine, il bénéficie également d’une vue imprenable sur le Rhône. L’ensemble a été pensé pour optimiser la lumière et l’espace, dans un esprit loft contemporain. Un bien rare, idéal pour un couple ou une résidence d’artiste en quête d’originalité.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1440&auto=format&fit=crop"
@@ -120,7 +122,7 @@
         "id": 9,
         "name": "Résidence Saint Michel",
         "type": "Appartement",
-        "description": "Appartement lumineux proche de la gare.",
+        "description": "Dans une résidence sécurisée proche de la gare centrale, cet appartement lumineux au dernier étage bénéficie d’une vue dégagée sur la ville. Il se compose d’un séjour spacieux, d’une cuisine fermée, de deux chambres avec placards, et d’un balcon filant idéal pour profiter des soirées d’été. Proche de toutes commodités et des transports, il conviendra aussi bien à un jeune couple qu’à un investisseur averti.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1501183638714-7f3f3a54a3a3?q=80&w=1400&auto=format&fit=crop"
@@ -134,7 +136,7 @@
         "id": 10,
         "name": "Villa des Arts",
         "type": "Maison",
-        "description": "Villa moderne avec atelier d'artiste.",
+        "description": "La Villa des Arts est un lieu de vie inspirant conçu pour les passionnés de création et de tranquillité. Dotée d’un vaste atelier lumineux avec verrière, cette maison propose également un salon cosy avec cheminée, trois chambres et un jardin arboré. Située dans un quartier calme et recherché, elle conjugue avec brio architecture moderne, fonctionnalité, et environnement propice à l’épanouissement artistique.",
         "city": "Avignon",
         "images": [
           "https://images.unsplash.com/photo-1512403754473-27835f7b9984?q=80&w=1430&auto=format&fit=crop"

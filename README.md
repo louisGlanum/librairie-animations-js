@@ -25,3 +25,7 @@ INSPI
 HERO EFFECT : https://www.youtube.com/watch?v=AaO-LmExmkM
 GALLERY SLIDER : https://www.youtube.com/watch?v=v0UoqZJRP5M
 GIVENCHY AWWWARDS : https://www.youtube.com/watch?v=rD6ibr8wgzo
+
+
+CODEPEN :
+Key numbers: https://codesandbox.io/s/new-3xwnc
